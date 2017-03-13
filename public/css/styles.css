@@ -1,0 +1,33 @@
+.homePage {
+  background: linear-gradient(
+                     rgba(20,20,20, .7),
+                     rgba(20,20,20, .7)),
+                    url("http://static1.squarespace.com/static/53dd6676e4b0fedfbc26ea91/54b6c509e4b062126976d942/5776ea4a20099e4be4366c13/1467910842671/bathroom-453420_960_720.png?format=1000w");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.finder {
+  margin: 18% 40% 0% 40%;
+  color: orange;
+  border: solid 3px white;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.review {
+  margin: 5% 40% 5% 40%;
+  color: orange;
+  border: solid 3px white;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.emergency {
+  margin: 0% 40% 18% 40%;
+  color: orange;
+  border: solid 3px white;
+  border-radius: 5px;
+  background-color: lightgray;
+}

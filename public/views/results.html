@@ -1,0 +1,8 @@
+<div class="results">
+    <ng-view>
+        <span ng-repeat="review in results | filter:search">
+                <h3>Location: {{review.location}}</h3>
+                <h5>Rating: {{review.rating}}</h5>
+        </span>
+    </ng-view>
+</div>
