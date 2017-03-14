@@ -9,14 +9,14 @@
 </head>
 <body class="homePage" ng-controller="myController">
 
-  <!-- <div>
-    <button ng-click="#views/select"><a href ="#views/select">Need to Go?</a></button>
-    <button ng-click="#views/addreview"><a href ="#/addreview">Add a Review</a></button>
-    <button ng-click="#views/locationreview"><a href ="#views/locationreview">Location Review</a></button>
-    <button ng-click="#views/results"><a href ="#views/results">Results of Selected Search</a></button>
-  </div> -->
+  <div>
+    <button><a href ="#/select">Need to Go? (Select page)</a></button>
+    <button><a href ="#/addreview">Add a Review</a></button>
+    <button><a href ="#/locationreview">Location Review</a></button>
+    <button><a href ="#/getreviews">Results of Selected Search</a></button>
+  </div>
 
-  <div class="finder">
+ <!-- <div class="finder">
     <h3>Find a bathroom</h3>
   </div>
   <div class="review">
@@ -31,13 +31,11 @@
   <input type="text" placeholder="Add rating(1-5)" ng-model="review.rating"> <br>
   <input type="text" placeholder="Comment" ng-model="review.comment"> <br>
 
-  <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
-  <ul ng-repeat="review in reviewList">
-    <li>Address:{{review.address}}</li>
-    <li>Type: {{review.type}}</li>
-    <li>Rating: {{review.rating}}</li>
-    <li>Comment: {{review.comment}}</li>
-  </ul>
+  <button type="button" ng-click="submitToReviews(review)">Submit Review</button> -->
+
+
+  <ng-view></ng-view>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

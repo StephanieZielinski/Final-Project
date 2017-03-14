@@ -26,7 +26,7 @@ pg.connect(connectionString, function(err, client, done){
  });
 
  query.on('end', function(){
-   console.log(results);
+  //  console.log(results);
    client.end();
    return results;
  });
@@ -44,7 +44,7 @@ app.get('/get-reviews', function(req, res, next){
    });
 
    query.on('end', function(){
-     console.log(results);
+    //  console.log(results);
      client.end();
      return res.json(results);
    });
@@ -73,7 +73,7 @@ app.post('/add-review', function(req, res, next){
    });
 
    query.on('end', function(){
-     console.log(results);
+    //  console.log(results);
      client.end();
      return res.json(results);
    });

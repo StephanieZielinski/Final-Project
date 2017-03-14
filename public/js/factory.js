@@ -38,4 +38,26 @@ app.factory('privyService', function($http) {
   };
 
 
+  // $http({
+  //   method: 'GET',
+  //   url: '/locationreview'
+  //   }).then(function successCallback(response){
+  //   $scope.locationReview = response.data;
+  //   });
+  //
+  // $http({
+  //   method: 'GET',
+  //   url: '/results'
+  //   }).then(function successCallback(response) {
+  //   $scope.reviewList= response.data;
+  //   });
+  //
+  // $http({
+  //   method: 'GET',
+  //   url: '/select'
+  //   }).then(function successCallback(response){
+  //   // Need to match names selectBathroom or selectType or selectCatag
+  //   $scope.select = response.data;
+  //   });
+
 });
