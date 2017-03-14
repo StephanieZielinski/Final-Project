@@ -10,13 +10,13 @@
 <body class="homePage" ng-controller="myController">
 
   <div>
-    <button ng-click="#views/select"><a href ="#views/select">Need to Go?</a></button>
-    <button ng-click="#views/addreview"><a href ="#/addreview">Add a Review</a></button>
-    <button ng-click="#views/locationreview"><a href ="#views/locationreview">Location Review</a></button>
-    <button ng-click="#views/results"><a href ="#views/results">Results of Selected Search</a></button>
+    <a href ="#/select"><button>Need to Go?</button></a>
+    <a href ="#/addreview"><button>Add a Review</a></button>
+    <a href ="#/locationreview"><button>Location Review</a></button>
+    <a href ="#/results"><button>Results of Selected Search</a></button>
   </div>
 
-  <div class="finder">
+  <!-- <div class="finder">
     <h3>Find a bathroom</h3>
   </div>
   <div class="review">
@@ -24,7 +24,7 @@
   </div>
   <div class="emergency">
     <h3>Emergency!</h3>
-  </div> -->
+  </div> --> -->
 
   <input type="text" placeholder="address" ng-model="review.address">
   <input type="text" placeholder="business or public" ng-model="review.type">
@@ -42,5 +42,7 @@
 <script src="js/module.js"></script>
 <script src="js/controller.js"></script>
 <script src="js/factory.js"></script>
+<script src="js/config.js"></script>
+
 </body>
 </html>

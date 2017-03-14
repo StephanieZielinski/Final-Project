@@ -33,7 +33,7 @@ pg.connect(connectionString, function(err, client, done){
 
 });
 
-app.get('/get-reviews', function(req, res, next){
+app.get('/locationreview', function(req, res, next){
  var results = [];
  pg.connect(connectionString, function(err, client, done) {
 
@@ -53,7 +53,7 @@ app.get('/get-reviews', function(req, res, next){
 });
 
 
-app.post('/add-review', function(req, res, next){
+app.post('/addreview', function(req, res, next){
 
  var results = [];
  var review = {

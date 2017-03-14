@@ -17,7 +17,7 @@ app.factory('privyService', function($http) {
   function getReviews() {
     var promise = $http({
       method: 'GET',
-      url: '/get-reviews'
+      url: '/results'
     }).then(function successCallback(response) {
       console.log(response);
       reviewList = response.data;
@@ -28,7 +28,7 @@ app.factory('privyService', function($http) {
   function addReview(review) {
     var promise = $http({
       method: 'POST',
-      url: '/add-review',
+      url: '/addreview',
       data: review
     }).then(function successCallback(response) {
       console.log(response);
