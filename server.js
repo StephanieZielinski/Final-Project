@@ -17,13 +17,14 @@ app.use(bodyParser.json({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
   pg.connect(connectionString, function(err, client, done){
+  
     var reviews = [];
     var query = client.query('SELECT * FROM privy');
     query.on('row', function(row){
-      results.push(row);
+    results.push(row);
     });
 
-    query.on('end', function(){
+      query.on('end', function(){
       console.log(reviews);
       client.end();
       return reviews;
