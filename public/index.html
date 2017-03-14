@@ -26,10 +26,12 @@
     <h3>Emergency!</h3>
   </div> -->
 
+  <input type="text" placeholder="address" ng-model="review.address">
+  <input type="text" placeholder="business or public" ng-model="review.type">
+
   <input type="text" placeholder="add rating(1-5)" ng-model="review.rating">
-  <button type="button" ng-click="submitToReviews(review.rating)">Submit Review</button>
-  <li>{{review.rating}}</li>
-  <li ng-repeat="review in reviewList"><{{review}}</li>
+  <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
+  <li ng-repeat="review in reviewList"><{{review.address}}</li>
 
 
 

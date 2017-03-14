@@ -25,11 +25,11 @@ app.factory('privyService', function($http) {
     return promise;
   };
 
-  function addReview(item) {
+  function addReview(review) {
     var promise = $http({
       method: 'POST',
       url: '/add-review',
-      data: item
+      data: review
     }).then(function successCallback(response) {
       console.log(response);
       reviewList = response.data;

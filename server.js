@@ -4,7 +4,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var password = require('./password.js');
 
-var connectionString = 'postgres://opxeceunrpgebk:'+password+'@ec2-54-83-25-217.compute-1.amazonaws.com:5432/d4v5g9dp5h91jc';
+var connectionString = 'postgres://opxeceunrpgebk:'+password+'@ec2-54-83-25-217.compute-1.amazonaws.com:5432/d4v5g9dp5h91jc?ssl=true';
 console.log(connectionString);
 var client = new pg.Client(connectionString);
 
@@ -57,13 +57,16 @@ app.post('/add-review', function(req, res, next){
 
   var results = [];
   var review = {
-    rating: req.body.rating
+    rating: req.body.review,
+    type: req.body.type,
+    address: req.body.address
   };
+  console.log(req.body);
 
   pg.connect(connectionString, function(err, client, done) {
 
 
-    client.query('INSERT INTO privy(item) values($1)', [review.rating]);
+    client.query('INSERT INTO privy(rating, type, address) values($1, $2, $3)', [review.rating, review.type, review.address]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
     query.on('row', function(row){
