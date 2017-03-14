@@ -9,12 +9,12 @@
 </head>
 <body class="homePage" ng-controller="myController">
 
-  <!-- <div>
+  <div>
     <button ng-click="#views/select"><a href ="#views/select">Need to Go?</a></button>
     <button ng-click="#views/addreview"><a href ="#/addreview">Add a Review</a></button>
     <button ng-click="#views/locationreview"><a href ="#views/locationreview">Location Review</a></button>
     <button ng-click="#views/results"><a href ="#views/results">Results of Selected Search</a></button>
-  </div> -->
+  </div>
 
   <div class="finder">
     <h3>Find a bathroom</h3>
@@ -33,7 +33,7 @@
   <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
   <li ng-repeat="review in reviewList"><{{review.address}}</li>
 
-
+  <ng-view></ng-view>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
