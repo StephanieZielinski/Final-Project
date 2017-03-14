@@ -1,4 +1,5 @@
 var app = angular.module('myMod', ['ngRoute']);
+<<<<<<< HEAD
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
@@ -21,3 +22,5 @@ app.config(function($routeProvider, $locationProvider){
 
   $locationProvider.hashPrefix('');
 });
+=======
+>>>>>>> 4e520a9ceb15bb042ddab0cf07a3b8cd21a8d014
