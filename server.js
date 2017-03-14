@@ -17,69 +17,20 @@ app.use(bodyParser.json({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
   pg.connect(connectionString, function(err, client, done){
-    var reviews = [];
+    var results = [];
     var query = client.query('SELECT * FROM privy');
     query.on('row', function(row){
       results.push(row);
     });
 
     query.on('end', function(){
-      console.log(reviews);
-      client.end();
-      return reviews;
-    });
-
-  });
-
-app.put('/edit-review/:id', function(req, res, next){
-
-  var results = [];
-  var id = req.params.id;
-  var data = {
-    product: req.body.product
-  };
-
-  pg.connect(connectionString, function(err, client, done) {
-
-    client.query('UPDATE privy SET product=($1) WHERE id=($2)', [data.product, id]);
-    var query = client.query('SELECT * FROM privy ORDER BY id');
-
-    query.on('row', function(row){
-      results.push(row);
-    });
-
-    query.on('end', function(){
       console.log(results);
       client.end();
-      return res.json(results);
-    });
-  });
-});
-
-app.delete('/delete-review/:id', function(req, res, next){
-
-  var results = [];
-  var id = req.params.id;
-
-  pg.connect(connectionString, function(err, client, done) {
-
-
-    client.query('DELETE FROM privy WHERE id=($1)', [id]);
-    var query = client.query('SELECT * FROM privy ORDER BY id');
-
-    query.on('row', function(row){
-      results.push(row);
-    });
-
-    query.on('end', function(){
-      console.log(results);
-      client.end();
-      return res.json(results);
+      return results;
     });
 
   });
 
-});
 
 app.post('/add-review', function(req, res, next){
 
@@ -126,6 +77,56 @@ app.get('/get-review', function(req, res, next){
 
   });
 });
+
+// app.put('/edit-review/:id', function(req, res, next){
+//
+//   var results = [];
+//   var id = req.params.id;
+//   var data = {
+//     product: req.body.product
+//   };
+//
+//   pg.connect(connectionString, function(err, client, done) {
+//
+//     client.query('UPDATE privy SET product=($1) WHERE id=($2)', [data.product, id]);
+//     var query = client.query('SELECT * FROM privy ORDER BY id');
+//
+//     query.on('row', function(row){
+//       results.push(row);
+//     });
+//
+//     query.on('end', function(){
+//       console.log(results);
+//       client.end();
+//       return res.json(results);
+//     });
+//   });
+// });
+
+// app.delete('/delete-review/:id', function(req, res, next){
+//
+//   var results = [];
+//   var id = req.params.id;
+//
+//   pg.connect(connectionString, function(err, client, done) {
+//
+//
+//     client.query('DELETE FROM privy WHERE id=($1)', [id]);
+//     var query = client.query('SELECT * FROM privy ORDER BY id');
+//
+//     query.on('row', function(row){
+//       results.push(row);
+//     });
+//
+//     query.on('end', function(){
+//       console.log(results);
+//       client.end();
+//       return res.json(results);
+//     });
+//
+//   });
+//
+// });
 
 
 var server = app.listen(3000, function() {

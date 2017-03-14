@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html ng-app ="My Mod">
+<html ng-app ="myMod">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
   <title>Privy</title>
 </head>
 <body class="homePage">
 
-  <div>
+  <!-- <div>
     <button ng-click="#views/select"><a href ="#views/select">Need to Go?</a></button>
     <button ng-click="#views/addreview"><a href ="#/addreview">Add a Review</a></button>
     <button ng-click="#views/locationreview"><a href ="#views/locationreview">Location Review</a></button>
@@ -24,7 +24,12 @@
   </div>
   <div class="emergency">
     <h3>Emergency!</h3>
-  </div>
+  </div> -->
+
+  <input type="text" placeholder="add review" ng-model="review">
+  <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
+
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
