@@ -57,12 +57,15 @@ app.post('/add-review', function(req, res, next){
 
  var results = [];
  var review = {
-   rating: req.body.rating
+   rating: req.body.rating,
+   type: req.body.type,
+   address: req.body.address,
+   comment: req.body.comment
  };
 
  pg.connect(connectionString, function(err, client, done) {
 
-    client.query('INSERT INTO privy(rating, type, address) values($1, $2, $3)', [review.rating, review.type, review.address]);
+    client.query('INSERT INTO privy(rating, type, address, comment) values($1, $2, $3, $4)', [review.rating, review.type, review.address, review.comment]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
    query.on('row', function(row){
