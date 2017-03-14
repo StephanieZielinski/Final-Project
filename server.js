@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var password = require('./password.js');
 
 var connectionString = 'postgres://opxeceunrpgebk:'+password+'@ec2-54-83-25-217.compute-1.amazonaws.com:5432/d4v5g9dp5h91jc';
+console.log(connectionString);
 var client = new pg.Client(connectionString);
 
  var config = {
@@ -17,20 +18,20 @@ var pool = new pg.Pool(config);
 app.use(bodyParser.json({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-  pg.connect(connectionString, function(err, client, done){
-    var results = [];
-    var query = client.query('SELECT * FROM privy');
-    query.on('row', function(row){
-      results.push(row);
-    });
-
-    query.on('end', function(){
-      console.log(results);
-      client.end();
-      return results;
-    });
-
+pg.connect(connectionString, function(err, client, done){
+  var results = [];
+  var query = client.query('SELECT * FROM privy');
+  query.on('row', function(row){
+    results.push(row);
   });
+
+  query.on('end', function(){
+    console.log(results);
+    client.end();
+    return results;
+  });
+
+});
 
 app.get('/get-reviews', function(req, res, next){
   var results = [];
