@@ -5,13 +5,24 @@ app.factory('privyService', function($http) {
   var reviewList = [];
 
   return {
-    addReview: addReview,
+    updateReviews: updateReviews,
     getReviews: getReviews,
-    updateReviews: updateReviews
+    addReview: addReview
   };
 
   function updateReviews(){
     return reviewList;
+  };
+
+  function getReviews() {
+    var promise = $http({
+      method: 'GET',
+      url: '/get-reviews'
+    }).then(function successCallback(response) {
+      console.log(response);
+      reviewList = response.data;
+    });
+    return promise;
   };
 
   function addReview(item) {
@@ -25,18 +36,6 @@ app.factory('privyService', function($http) {
     });
     return promise;
   };
-
-function getReviews() {
-  var promise = $http({
-    method: 'GET',
-    url: '/get-reviews'
-  }).then(function successCallback(response) {
-    console.log(response);
-    reviewList = response.data;
-  });
-  return promise;
-};
-
 
 
 });

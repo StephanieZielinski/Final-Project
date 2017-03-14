@@ -7,7 +7,7 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
   <title>Privy</title>
 </head>
-<body class="homePage">
+<body class="homePage" ng-controller="myController">
 
   <!-- <div>
     <button ng-click="#views/select"><a href ="#views/select">Need to Go?</a></button>
@@ -26,8 +26,10 @@
     <h3>Emergency!</h3>
   </div> -->
 
-  <input type="text" placeholder="add review" ng-model="review">
-  <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
+  <input type="text" placeholder="add rating(1-5)" ng-model="review.rating">
+  <button type="button" ng-click="submitToReviews(review.rating)">Submit Review</button>
+  <li>{{review.rating}}</li>
+  <li ng-repeat="review in reviewList"><{{review}}</li>
 
 
 
