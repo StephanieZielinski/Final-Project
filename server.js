@@ -58,15 +58,20 @@ app.post('/addreview', function(req, res, next){
  var results = [];
  var review = {
    rating: req.body.rating,
-   type: req.body.type,
    address: req.body.address,
    comment: req.body.comment,
-   family: req.body.family
+   family: req.body.family,
+   separate: req.body.separate,
+   neutral: req.body.neutral,
+   single_stall: req.body.single,
+   handicap: req.body.handicap,
+   name: req.body.name,
+   type: req.body.type
  };
 
  pg.connect(connectionString, function(err, client, done) {
 
-    client.query('INSERT INTO privy(rating, type, address, comment, family) values($1, $2, $3, $4, $5)', [review.rating, review.type, review.address, review.comment, review.family]);
+    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
    query.on('row', function(row){
@@ -88,15 +93,20 @@ app.get('/results', function(req, res, next){
  var results = [];
  var review = {
    rating: req.body.rating,
-   type: req.body.type,
    address: req.body.address,
    comment: req.body.comment,
-   family: req.body.family
+   family: req.body.family,
+   separate: req.body.separate,
+   neutral: req.body.neutral,
+   single_stall: req.body.single,
+   handicap: req.body.handicap,
+   name: req.body.name,
+   type: req.body.type
  };
 
  pg.connect(connectionString, function(err, client, done) {
 
-    client.query('INSERT INTO privy(rating, type, address, comment, family) values($1, $2, $3, $4, $5)', [review.rating, review.type, review.address, review.comment, review.family]);
+    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
    query.on('row', function(row){
