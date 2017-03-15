@@ -63,7 +63,7 @@ app.post('/addreview', function(req, res, next){
    family: req.body.family,
    separate: req.body.separate,
    neutral: req.body.neutral,
-   single_stall: req.body.single,
+   single: req.body.single,
    handicap: req.body.handicap,
    name: req.body.name,
    type: req.body.type
@@ -98,7 +98,7 @@ app.get('/results', function(req, res, next){
    family: req.body.family,
    separate: req.body.separate,
    neutral: req.body.neutral,
-   single_stall: req.body.single,
+   single: req.body.single,
    handicap: req.body.handicap,
    name: req.body.name,
    type: req.body.type

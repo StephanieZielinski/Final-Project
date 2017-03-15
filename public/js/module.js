@@ -17,6 +17,10 @@ app.config(function($routeProvider, $locationProvider){
   .when('/select', {
     controller:'myController',
     templateUrl: 'views/select.html'
+  })
+  .when('/thankyou', {
+    controller: 'myController',
+    templateUrl: 'views/thankyou.html'
   });
 
   $locationProvider.hashPrefix('');
