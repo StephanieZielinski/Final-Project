@@ -1,13 +1,23 @@
-<h1>Add Review Form Page</h1>
+<h1>Add Bathroom Review</h1>
+
 <div class="reviewform">
 
 <form>
+  <h3>Location Name</h3>
+  <input type="text" placeholder="Location Name" ng-model="review.name"> <br>
+
+
+  <h3>Location Address</h3>
+  <input type="text" placeholder="Street Address" ng-model="review.address"> <br>
+
+
   <h3>Bathroom Rating</h3>
   <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One *<br>
   <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two **<br>
   <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three ***<br>
   <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four ****<br>
   <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five *****<br>
+
 
   <h3>Public or Business</h3>
   <input type="radio" name="Type of Bathroom" value="business" ng-model="review.type"> Business </br>
@@ -19,23 +29,15 @@
   <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral">Gender Neutral<br>
   <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap">Handicap<br>
   <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family">Family Friendly<br>
-
-
-  </select>
+  <input type="checkbox" name="Type of Bathroom" ng-value="single stall" ng-model="review.single">Single Stall<br>
 
   <h3>Comments</h3>
   <input type="text" name="review text" placeholder="Additional Information" ng-model="review.comment">Review your Bathroom<br>
 
-  <input type="text" placeholder="Street Address" ng-model="review.address"> <br>
 
   <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
-
-<button type="button" name="button">will take you to review created</button>
- <!-- thank you for submitting review, like us on twitter. alternate page -->
   <!-- Add route <param name="" value=""> -->
 
-
 </form>
-
 
 </div>
