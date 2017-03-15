@@ -88,3 +88,7 @@ textarea:focus, input:focus {
   border-radius: 5px;
   background-color: lightgray;
 }
+
+.results {
+  border-style: solid;
+}

@@ -1,9 +1,9 @@
 <h1>Results Page</h1>
 <div class="results">
-        <span ng-repeat="review in reviewList | filter:search">
-                <h3>Location: {{review.location}}</h3>
-                <h5>Rating: {{review.rating}}</h5><br>
-                <h5>Type: {{review.type}}</h5> <br>
-                <p>Comment: {{review.comment}}</p>
+        <span ng-repeat="review in reviewList">
+                <h3>Address: {{review.address}}</h3>
+                <h5>Rating: {{review.rating}}</h5>
+                <h5>Type: {{review.type}}</h5>
+                <p>Comment: {{review.comment}}</p> <hr>
         </span>
 </div>

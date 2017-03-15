@@ -83,6 +83,36 @@ app.post('/addreview', function(req, res, next){
 
 });
 
+app.get('/results', function(req, res, next){
+
+ var results = [];
+ var review = {
+   rating: req.body.rating,
+   type: req.body.type,
+   address: req.body.address,
+   comment: req.body.comment,
+   family: req.body.family
+ };
+
+ pg.connect(connectionString, function(err, client, done) {
+
+    client.query('INSERT INTO privy(rating, type, address, comment, family) values($1, $2, $3, $4, $5)', [review.rating, review.type, review.address, review.comment, review.family]);
+    var query = client.query('SELECT * FROM privy ORDER BY rating');
+
+   query.on('row', function(row){
+     results.push(row);
+   });
+
+   query.on('end', function(){
+    //  console.log(results);
+     client.end();
+     return res.json(results);
+   });
+
+ });
+
+});
+
 
 // app.put('/edit-review/:id', function(req, res, next){
 //
