@@ -1,4 +1,12 @@
-var app = angular.module('myMod', ['ngRoute']);
+var app = angular.module('myMod', ['ngRoute', 'uiGmapgoogle-maps']);
+
+app.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyDDSY7PloqKzlS8KIOrwnbmq2bnhuti1L8',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
+})
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
@@ -15,7 +23,7 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'views/results.html'
   })
   .when('/select', {
-    controller:'myController',
+    controller:'mapController',
     templateUrl: 'views/select.html'
   });
 
