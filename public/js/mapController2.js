@@ -27,6 +27,8 @@ $scope.test = "test";
         console.log(results);
         $scope.resultsDisplay = results;
         console.log($scope.resultsDisplay);
+        console.log($scope.resultsDisplay[0].name);
+
 
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {

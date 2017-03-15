@@ -24,3 +24,8 @@ html, body, #map_canvas {
 .marker-labels{
   background-color: white;
 }
+
+#map{
+  height: 400px;
+  width: 500px;
+}
