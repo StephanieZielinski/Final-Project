@@ -1,20 +1,23 @@
+<h1>Add Review Form Page</h1>
 <div class="reviewform">
 
 <form>
   <h3>Bathroom Rating</h3>
-  <input type="radio" name="rating" value="1">One *<br>
-  <input type="radio" name="rating" value="2">Two **<br>
-  <input type="radio" name="rating" value="3">Three ***<br>
-  <input type="radio" name="rating" value="4">Four ****<br>
-  <input type="radio" name="rating" value="5">Five *****<br>
-
+  <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One *<br>
+  <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two **<br>
+  <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three ***<br>
+  <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four ****<br>
+  <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five *****<br>
 
   <h3>Type of Bathroom</h3>
-  <input type="checkbox" name="Type of Bathroom" value="Single Unisex">Single Unisex<br>
+  <input type="checkbox" name="Type of Bathroom" ng-value=true ng-model="review.family">Family Friendly<br>
+
+
+  <!-- <h3>Type of Bathroom</h3>
+  <input type="checkbox" name="Type of Bathroom" value="Single Unisex" ng-model="">Single Unisex<br>
   <input type="checkbox" name="Type of Bathroom" value="Multiple Stall Gender Separate">Multiple Stalls Gender Separate<br>
   <input type="checkbox" name="Type of Bathroom" value="Multiple Stall Gender Neutral">Multiple Stalls Gender Neutral<br>
-  <input type="checkbox" name="Type of Bathroom" value="Family Friendly">Family Friendly<br>
-  <input type="checkbox" name="Type of Bathroom" value="Other">Other<br>
+  <input type="checkbox" name="Type of Bathroom" value="Family Friendly" ng-model="review.family">Family Friendly<br>
 
 
   <h3>Features</h3>
@@ -23,7 +26,7 @@
   <input type="checkbox" name="Bathroom Features" value="Single Sink">Single Sink<br>
   <input type="checkbox" name="Bathroom Features" value="Multiple Sinks">Multiple Sinks<br>
   <input type="checkbox" name="Bathroom Features" value="Hand Dryers">Hand Dryer<br>
-  <input type="checkbox" name="Bathroom Features" value="Paper Towles">Paper Towles<br>
+  <input type="checkbox" name="Bathroom Features" value="Paper Towels">Paper Towels<br>
   <input type="checkbox" name="Bathroom Features" value="Changing Station">Changing Station<br>
   <input type="checkbox" name="Bathroom Features" value="Sharps Disposal">Sharps Disposal<br>
   <input type="checkbox" name="Bathroom Features" value="Toliet Seat Covers">Toliet Seat Covers<br>
@@ -35,19 +38,17 @@
    <option value="Condoms">Condoms</option>
    <option value="Diapers">Diapers</option>
    <option value="Wet Wipes">Wet Wipes</option>
-  </select>
+  </select> -->
 
-  <h3>Review</h3>
-  <input type="text" name="review text" value="Additional Information">Review your Bathroom<br>
+  <h3>Comments</h3>
+  <input type="text" name="review text" placeholder="Additional Information" ng-model="review.comment">Review your Bathroom<br>
 
-  <button ng-click="submitToReviews" ng-init=""></button>
 
 <hr>
 
   <input type="text" placeholder="Street Address" ng-model="review.address"> <br>
   <input type="text" placeholder="Business or Public" ng-model="review.type"> <br>
-  <input type="text" placeholder="Add rating(1-5)" ng-model="review.rating"> <br>
-  <input type="text" placeholder="Comment" ng-model="review.comment"> <br>
+
 
   <button type="button" ng-click="submitToReviews(review)">Submit Review</button>
 
@@ -56,6 +57,7 @@
     <li>Type: {{review.type}}</li>
     <li>Rating: {{review.rating}}</li>
     <li>Comment: {{review.comment}}</li>
+    <li>Family Friendly: {{review.family}}
   </ul>
 
 
