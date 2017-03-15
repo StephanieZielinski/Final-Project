@@ -1,0 +1,31 @@
+html, body, #map_canvas {
+    height: 100%;
+    width: 100%;
+}
+
+#map_canvas {
+    position: relative;
+}
+
+.angular-google-map-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.mapContainer {
+
+  width: 400px;
+  height: 300px;
+}
+
+.marker-labels{
+  background-color: white;
+}
+
+#map{
+  height: 400px;
+  width: 500px;
+}

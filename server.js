@@ -4,6 +4,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var password = require('./password.js');
 
+
 var connectionString = 'postgres://opxeceunrpgebk:'+password+'@ec2-54-83-25-217.compute-1.amazonaws.com:5432/d4v5g9dp5h91jc?ssl=true';
 console.log(connectionString);
 var client = new pg.Client(connectionString);
