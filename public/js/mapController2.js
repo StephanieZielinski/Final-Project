@@ -41,12 +41,18 @@ $scope.test = "test";
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
+          icon: "img/tp1.png",
+          animation: google.maps.Animation.DROP
+
         });
+
+        $scope.placeObj = place;
+
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent(place.name + ' ' + place.vicinity + ' ' + place.formatted_phone_number);
+          infowindow.setContent(place.name + '<br>' + place.formatted_address + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
