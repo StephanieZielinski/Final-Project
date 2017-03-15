@@ -1,19 +1,20 @@
 
-<p>select page test</p>
+<h2>select page test</h2>
 
-<div class="mapContainer">
+<!-- <div class="mapContainer"> -->
 
-  <div id="map_canvas">
-      <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+  <div id="map">  </div>
 
-          <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'">
+<p ng-repeat="thing in resultsDisplay">
 
-          </ui-gmap-markers>
+{{thing.name}}
+</p>
 
-      </ui-gmap-google-map>
 
-  </div>
 
-</div>
+  <!-- </div> -->
 
+test text
 {{test}}
+
+{{resultsDisplay[0].name}}
