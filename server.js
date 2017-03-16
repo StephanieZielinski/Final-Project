@@ -67,12 +67,13 @@ app.post('/addreview', function(req, res, next){
    single: req.body.single,
    handicap: req.body.handicap,
    name: req.body.name,
-   type: req.body.type
+   type: req.body.type,
+   google_id: req.body.google_id
  };
 
  pg.connect(connectionString, function(err, client, done) {
 
-    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type]);
+    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type, google_id) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type, review.google_id]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
    query.on('row', function(row){
@@ -102,12 +103,13 @@ app.get('/results', function(req, res, next){
    single: req.body.single,
    handicap: req.body.handicap,
    name: req.body.name,
-   type: req.body.type
+   type: req.body.type,
+   google_id: req.body.google_id
  };
 
  pg.connect(connectionString, function(err, client, done) {
 
-  //  client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type]);
+
     var query = client.query('SELECT * FROM privy ORDER BY rating');
 
    query.on('row', function(row){
