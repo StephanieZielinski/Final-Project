@@ -7,7 +7,8 @@ app.factory('privyService', function($http) {
   return {
     updateReviews: updateReviews,
     getReviews: getReviews,
-    addReview: addReview
+    addReview: addReview,
+    locationReviews: locationReviews
   };
 
   function updateReviews(){
@@ -19,7 +20,19 @@ app.factory('privyService', function($http) {
       method: 'GET',
       url: '/results'
     }).then(function successCallback(response) {
+      //console.log(response);
+      reviewList = response.data;
+    });
+    return promise;
+  };
+
+  function locationReviews(id) {
+    var promise = $http({
+      method: 'GET',
+      url: '/locationreview/'+ id
+    }).then(function successCallback(response) {
       console.log(response);
+      console.log(id);
       reviewList = response.data;
     });
     return promise;
@@ -32,6 +45,8 @@ app.factory('privyService', function($http) {
       data: review
     }).then(function successCallback(response) {
       console.log(response);
+      console.log(review);
+
       reviewList = response.data;
     });
     return promise;

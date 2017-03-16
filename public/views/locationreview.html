@@ -5,12 +5,12 @@
 
     <input type="text" ng-model="search" placeholder="Search"><br>
 
-    <h3>{{review.name}}</h3>
+    <h3>{{locationReviewsArray[0].name}}</h3>
     <p ng-if="review.type != null">{{review.type}}</p>
     <h5>Address: {{review.address}}</h5>
 
 
-        <span ng-repeat="review in reviewList | filter:search">
+        <span ng-repeat="review in locationReviewsArray">
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
                 <p>ID: {{review.googleid}}</p>

@@ -53,13 +53,19 @@ pg.connect(connectionString, function(err, client, done){
 //  });
 // });
 
-app.get('/locationreview/{{result.id}}', function(req, res, next){
- var results = [];
+app.get('/locationreview/:id', function(req, res, next){
+//  var id = req.params.id;
+//  console.log(id);
+//console.log("HEY");
+
+var results = [];
+// var id = req.params.id;
+
  pg.connect(connectionString, function(err, client, done) {
+   var id = req.params.id;
 
-   var query = client.query("SELECT * FROM privy ORDER BY googleid = '{{result.id}}'");
-
-   query.on('row', function(row){
+   var query = client.query("SELECT * FROM privy WHERE googleid=($1)",[id]);
+      query.on('row', function(row){
      results.push(row);
    });
 
