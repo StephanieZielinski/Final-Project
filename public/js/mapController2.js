@@ -3,9 +3,13 @@ var app = angular.module('myMod');
 app.controller('mapController', function($scope, privyService, $http) {
 
 $scope.test = "test";
+$scope.nameList = [];
+$scope.testArray = [];
+
 
   function initMap() {
 
+// Initialize to DETROIT (lat/lng)
         var Detroit = {lat: 42.3360077, lng: -83.0508025};
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -15,23 +19,28 @@ $scope.test = "test";
 
 
         infowindow = new google.maps.InfoWindow();
+
+//Call places service with nearbySearch using following parameters
+
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: Detroit,
           radius: 500,
-          type: ['store']
+          type: ['restaurant,museum']
         }, callback);
     //  }
 
+
+//returns Google Places Data in results
       function callback(results, status) {
         console.log(results);
         $scope.resultsDisplay = results;
         console.log($scope.resultsDisplay);
         console.log($scope.resultsDisplay[0].name);
 
-
+//Loop for Google Places Markers
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
+          for (var i = 0; i < 12; i++) {
             createMarker(results[i]);
           }
         }
@@ -47,12 +56,16 @@ $scope.test = "test";
 
         });
 
-        $scope.placeObj = place;
+      $scope.placeObj = place;
+      console.log($scope.placeObj.name);
+      $scope.nameList.push($scope.placeObj.name);
+      $scope.testArray = [1,2,3,4,5];
+      $scope.$apply();
 
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent(place.name + '<br>' + place.formatted_address + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
+          infowindow.setContent("INFO FROM DATABASE"+ "<br>" + place.name + '<br>' + place.vicinity + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
@@ -66,8 +79,21 @@ $scope.test = "test";
 
       }
 }
+
+
+console.log($scope.placeObj);
+console.log($scope.place);
+console.log($scope.nameList);
+console.log($scope.testArray);
+
+
       initMap();
 
+
+console.log($scope.nameList);
+console.log($scope.nameList[3]);
+
+// console.log($scope.testArray);
 
 
 
