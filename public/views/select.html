@@ -9,13 +9,12 @@
   <a href ="#/results">Handicap</a>
   <a href ="#/results">Family Friendly</a>
 </div>
-<h2>select page test</h2>
+
 
 
   <div id="map">  </div>
 
 <br>
-<p>Google ID: {{resultsDisplay[4].id}}</p>
 
 <div class="resultListing" ng-repeat="result in resultsDisplay">
 <p>{{result.name}}</p>
@@ -23,5 +22,6 @@
 <p>Open now: {{result.opening_hours.open_now}}<p>
 <p>Google ID: {{result.id}}</p>
 
-<a href="">View Reviews </a> <a href="">Add Review </a> <a href="">Directions</a>
+
+<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="">Add Review </a> <a href="">Directions</a>
 </div>

@@ -1,4 +1,4 @@
-var app = angular.module('myMod');
+var app = angular.module('privyMod');
 
 
 app.factory('privyService', function($http) {
@@ -7,7 +7,8 @@ app.factory('privyService', function($http) {
   return {
     updateReviews: updateReviews,
     getReviews: getReviews,
-    addReview: addReview
+    addReview: addReview,
+    addId: addId
   };
 
   function updateReviews(){
@@ -30,6 +31,20 @@ app.factory('privyService', function($http) {
       method: 'POST',
       url: '/addreview',
       data: review
+    }).then(function successCallback(response) {
+      console.log(response);
+      reviewList = response.data;
+    });
+    return promise;
+  };
+
+
+//trying to add google id to database
+  function addId(id) {
+    var promise = $http({
+      method: 'POST',
+      url: '/addId',
+      data: resultsDisplay.id
     }).then(function successCallback(response) {
       console.log(response);
       reviewList = response.data;

@@ -3,6 +3,8 @@
 
     <input type="text" ng-model="search" placeholder="Search"><br>
 
+    <!-- <a href="results/family">family</a> -->
+
         <span ng-repeat="review in reviewList | filter:search">
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>

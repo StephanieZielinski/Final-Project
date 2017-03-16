@@ -1,4 +1,4 @@
-var app = angular.module('myMod');
+var app = angular.module('privyMod');
 
 app.controller('mapController', function($scope, privyService, $http) {
 

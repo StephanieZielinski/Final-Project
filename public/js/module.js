@@ -1,4 +1,4 @@
-var app = angular.module('myMod', ['ngRoute']);
+var app = angular.module('privyMod', ['ngRoute']);
 
 // app.config(function(uiGmapGoogleMapApiProvider) {
 //     uiGmapGoogleMapApiProvider.configure({
@@ -43,16 +43,20 @@ var app = angular.module('myMod', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
-  .when('/addreview', {
-     controller:'myController',
+  .when('/addreview/:placeId', {
+     controller:'privyController',
      templateUrl: 'views/addreview.html'
   })
-  .when('/locationreview', {
-    controller:'myController',
+  .when('/locationreview/:placeId', {
+    controller:'privyController',
     templateUrl: 'views/locationreview.html'
   })
   .when('/results', {
-    controller: 'myController',
+    controller: 'privyController',
+    templateUrl: 'views/results.html'
+  })
+  .when('/results/:type', {
+    controller: 'privyController',
     templateUrl: 'views/results.html'
   })
   .when('/select', {
@@ -60,7 +64,7 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'views/select.html'
   })
   .when('/thankyou', {
-    controller: 'myController',
+    controller: 'privyController',
     templateUrl: 'views/thankyou.html'
   });
 
