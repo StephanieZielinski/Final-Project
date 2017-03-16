@@ -40,7 +40,7 @@ $scope.testArray = [];
 
 //Loop for Google Places Markers
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < 12; i++) {
+          for (var i = 1; i < 12; i++) {
             createMarker(results[i]);
           }
         }
@@ -65,7 +65,7 @@ $scope.testArray = [];
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent("INFO FROM DATABASE"+ "<br>" + place.name + '<br>' + place.vicinity + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
+          infowindow.setContent("INFO FROM DATABASE"+ "<br>" + "<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
