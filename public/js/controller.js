@@ -1,6 +1,6 @@
-var app = angular.module('myMod');
+var app = angular.module('privyMod');
 
-app.controller('myController', function($scope, privyService, $http) {
+app.controller('privyController', function($scope, privyService, $http, $routeParams) {
 
   privyService.getReviews().then(function(){
     $scope.reviewList = privyService.updateReviews();
@@ -12,5 +12,12 @@ app.controller('myController', function($scope, privyService, $http) {
         $scope.reviewList = privyService.updateReviews();
       });
     };
+
+  console.log($routeParams.type);
+
+  $scope.filter = {
+    family: $routeParams.family,
+    
+  }
 
 });

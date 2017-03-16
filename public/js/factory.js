@@ -1,4 +1,4 @@
-var app = angular.module('myMod');
+var app = angular.module('privyMod');
 
 
 app.factory('privyService', function($http) {

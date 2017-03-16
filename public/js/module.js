@@ -1,4 +1,4 @@
-var app = angular.module('myMod', ['ngRoute']);
+var app = angular.module('privyMod', ['ngRoute']);
 
 // app.config(function(uiGmapGoogleMapApiProvider) {
 //     uiGmapGoogleMapApiProvider.configure({
@@ -52,6 +52,10 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'views/locationreview.html'
   })
   .when('/results', {
+    controller: 'myController',
+    templateUrl: 'views/results.html'
+  })
+  .when('/results/:type', {
     controller: 'myController',
     templateUrl: 'views/results.html'
   })

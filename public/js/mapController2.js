@@ -1,4 +1,4 @@
-var app = angular.module('myMod');
+var app = angular.module('privyMod');
 
 app.controller('mapController', function($scope, privyService, $http) {
 
@@ -52,7 +52,7 @@ $scope.test = "test";
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent(place.name + '<br>' + place.formatted_address + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
+          infowindow.setContent('<a href="#/addreview">Add Review</a>' + '<br>'+ place.name + '<br>' + place.formatted_address + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
