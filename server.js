@@ -34,30 +34,30 @@ pg.connect(connectionString, function(err, client, done){
 
 });
 
-app.get('/locationreview', function(req, res, next){
- var results = [];
- pg.connect(connectionString, function(err, client, done) {
-
-   var query = client.query('SELECT * FROM privy ORDER BY rating');
-
-   query.on('row', function(row){
-     results.push(row);
-   });
-
-   query.on('end', function(){
-    //  console.log(results);
-     client.end();
-     return res.json(results);
-   });
-
- });
-});
+// app.get('/locationreview', function(req, res, next){
+//  var results = [];
+//  pg.connect(connectionString, function(err, client, done) {
+//
+//    var query = client.query('SELECT * FROM privy ORDER BY rating');
+//
+//    query.on('row', function(row){
+//      results.push(row);
+//    });
+//
+//    query.on('end', function(){
+//     //  console.log(results);
+//      client.end();
+//      return res.json(results);
+//    });
+//
+//  });
+// });
 
 app.get('/locationreview/{{result.id}}', function(req, res, next){
  var results = [];
  pg.connect(connectionString, function(err, client, done) {
 
-   var query = client.query("SELECT * FROM privy ORDER BY google_id = '{{result.id}}'");
+   var query = client.query("SELECT * FROM privy ORDER BY googleid = '{{result.id}}'");
 
    query.on('row', function(row){
      results.push(row);
@@ -87,13 +87,15 @@ app.post('/addreview', function(req, res, next){
    handicap: req.body.handicap,
    name: req.body.name,
    type: req.body.type,
+   googleid: req.body.id
  };
 
+console.log(review);
  pg.connect(connectionString, function(err, client, done) {
 
-    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type]);
+    client.query('INSERT INTO privy(rating, address, comment, family, separate, neutral, single, handicap, name, type, googleid) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', [review.rating, review.address, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type, review.googleid]);
     var query = client.query('SELECT * FROM privy ORDER BY rating');
-
+    console.log();
    query.on('row', function(row){
      results.push(row);
    });

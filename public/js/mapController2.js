@@ -1,13 +1,13 @@
 var app = angular.module('privyMod');
 
-app.controller('mapController', function($scope, privyService, $http) {
+app.controller('mapController', function($scope, privyService, $http, $location) {
 
-$scope.test = "test";
-$scope.nameList = [];
-$scope.testArray = [];
 
 
   function initMap() {
+
+    $scope.url = $location.path();
+    console.log($scope.url);
 
 // Initialize to DETROIT (lat/lng)
         var Detroit = {lat: 42.3360077, lng: -83.0508025};
@@ -40,7 +40,7 @@ $scope.testArray = [];
 
 //Loop for Google Places Markers
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 1; i < 12; i++) {
+          for (var i = 1; i < 15 ; i++) {
             createMarker(results[i]);
           }
         }
@@ -58,14 +58,14 @@ $scope.testArray = [];
 
       $scope.placeObj = place;
       console.log($scope.placeObj.name);
-      $scope.nameList.push($scope.placeObj.name);
+    //  $scope.nameList.push($scope.placeObj.name);
       $scope.testArray = [1,2,3,4,5];
       $scope.$apply();
 
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent("INFO FROM DATABASE"+ "<br>" + "<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + place.formatted_phone_number + '<br>' + place.rating);
+          infowindow.setContent("INFO FROM DATABASE"+ "<br>" + "<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + place.formatted_phone_number + '<br>' + place.rating + '<br>');
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
@@ -91,7 +91,7 @@ console.log($scope.testArray);
 
 
 console.log($scope.nameList);
-console.log($scope.nameList[3]);
+// console.log($scope.nameList[3]);
 
 // console.log($scope.testArray);
 

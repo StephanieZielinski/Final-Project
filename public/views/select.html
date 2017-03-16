@@ -15,7 +15,7 @@
   <div id="map">  </div>
 
 <br>
-
+{{url}}
 <div class="resultListing" ng-repeat="result in resultsDisplay">
 <p>{{result.name}}</p>
 <p>{{result.vicinity}}</p>
@@ -23,5 +23,5 @@
 <p>Google ID: {{result.id}}</p>
 
 
-<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="">Add Review </a> <a href="">Directions</a>
+<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="#/addreview/{{result.id}}">Add Review </a> <a href="">Directions</a>
 </div>

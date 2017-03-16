@@ -7,8 +7,7 @@ app.factory('privyService', function($http) {
   return {
     updateReviews: updateReviews,
     getReviews: getReviews,
-    addReview: addReview,
-    addId: addId
+    addReview: addReview
   };
 
   function updateReviews(){
@@ -40,17 +39,17 @@ app.factory('privyService', function($http) {
 
 
 //trying to add google id to database
-  function addId(id) {
-    var promise = $http({
-      method: 'POST',
-      url: '/addId',
-      data: resultsDisplay.id
-    }).then(function successCallback(response) {
-      console.log(response);
-      reviewList = response.data;
-    });
-    return promise;
-  };
+  // function addId(id) {
+  //   var promise = $http({
+  //     method: 'POST',
+  //     url: '/addId',
+  //     data: resultsDisplay.id
+  //   }).then(function successCallback(response) {
+  //     console.log(response);
+  //     reviewList = response.data;
+  //   });
+  //   return promise;
+  // };
 
 
   // $http({
