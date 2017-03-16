@@ -13,3 +13,11 @@
 
 
   <div id="map">  </div>
+<br>
+<div class="resultListing" ng-repeat="result in resultsDisplay">
+<p>{{result.name}}</p>
+<p>{{result.vicinity}}</p>
+<p>Open now: {{result.opening_hours.open_now}}<p>
+<p>Google ID: {{result.id}}</p>
+<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="">Add Review </a> <a href="">Directions</a>
+</div>

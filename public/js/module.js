@@ -11,30 +11,30 @@ var app = angular.module('privyMod', ['ngRoute']);
 
 
 
-app.directive('googleplace', function() {
-    return {
-        require: 'ngModel',
-        link: function(scope, element, attrs, model) {
-            var options = {
-                types: [],
-                componentRestrictions: {}
-            };
-            $scope.gPlace = new google.maps.places.PlacesService($scope.map);
-
-            google.maps.event.addListener($scope.gPlace, 'place_changed', function() {
-                scope.$apply(function() {
-                    model.$setViewValue(element.val());
-                });
-            });
-        }
-    };
-});
+// app.directive('googleplace', function() {
+//     return {
+//         require: 'ngModel',
+//         link: function(scope, element, attrs, model) {
+//             var options = {
+//                 types: [],
+//                 componentRestrictions: {}
+//             };
+//             $scope.gPlace = new google.maps.places.PlacesService($scope.map);
+//
+//             google.maps.event.addListener($scope.gPlace, 'place_changed', function() {
+//                 scope.$apply(function() {
+//                     model.$setViewValue(element.val());
+//                 });
+//             });
+//         }
+//     };
+// });
 
 //myApp.factory('myService', function() {});
-
-function MyCtrl($scope) {
-    $scope.gPlace;
-}
+//
+// function MyCtrl($scope) {
+//     $scope.gPlace;
+// }
 
 
 
@@ -43,20 +43,20 @@ function MyCtrl($scope) {
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
-  .when('/addreview', {
-     controller:'myController',
+  .when('/addreview/:placeId', {
+     controller:'privyController',
      templateUrl: 'views/addreview.html'
   })
-  .when('/locationreview', {
-    controller:'myController',
+  .when('/locationreview/:placeId', {
+    controller:'privyController',
     templateUrl: 'views/locationreview.html'
   })
   .when('/results', {
-    controller: 'myController',
+    controller: 'privyController',
     templateUrl: 'views/results.html'
   })
   .when('/results/:type', {
-    controller: 'myController',
+    controller: 'privyController',
     templateUrl: 'views/results.html'
   })
   .when('/select', {
@@ -64,7 +64,7 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'views/select.html'
   })
   .when('/thankyou', {
-    controller: 'myController',
+    controller: 'privyController',
     templateUrl: 'views/thankyou.html'
   });
 

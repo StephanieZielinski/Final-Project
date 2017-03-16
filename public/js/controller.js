@@ -13,11 +13,16 @@ app.controller('privyController', function($scope, privyService, $http, $routePa
       });
     };
 
-  console.log($routeParams.type);
+  // $scope.submitId = function(id){
+  //   privyService.addId(id).then(function()
+  //     $scop
+  // }
 
-  $scope.filter = {
-    family: $routeParams.family,
-    
-  }
+  console.log($routeParams.placeId);
+  console.log($routeParams.type);
+  // $scope.filter = {
+  //   family: $routeParams.family,
+  //
+  // }
 
 });
