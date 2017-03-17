@@ -14,7 +14,8 @@ app.controller('mapController', function($scope, privyService, $http, $location)
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: Detroit,
-          zoom: 15
+          zoom: 15,
+          scrollwheel: false
         });
 
         var center;
