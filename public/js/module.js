@@ -67,7 +67,7 @@ app.config(function($routeProvider, $locationProvider){
     controller: 'privyController',
     templateUrl: 'views/thankyou.html'
   })
-  .otherwise('/privy', {
+  .when('/', {
     controller: 'privyController',
     templateUrl: 'views/landing.html'
   });
