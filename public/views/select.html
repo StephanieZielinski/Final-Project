@@ -18,8 +18,8 @@
 <div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:1">
 <p>{{result.name}}</p>
 <p>{{result.vicinity}}</p>
-<p>Open now: {{result.opening_hours.open_now}}<p>
+<p>Open now: {{result.opening_hours.open_now}}</p>
 
 
-<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="#/addreview/{{result.id}}">Add Review </a>  <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+<a ng-href="#/locationreview/{{result.id}}">View Review </a>	&nbsp;	<a href="#/addreview/{{result.id}}">Add Review </a>	&nbsp;	<a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
 </div>

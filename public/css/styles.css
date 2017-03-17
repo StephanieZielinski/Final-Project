@@ -29,6 +29,12 @@ body {
   opacity: .5;
 }
 
+.addReviewLogo {
+  width: 60%;
+  margin-bottom: -200px;
+  margin-top: -100px;
+  opacity: .5;
+}
 
 .topper a {
   display: inline;
@@ -58,7 +64,7 @@ body {
 	background-color: #C1DBC0;
   border-radius: 10px;
 	border: 15px solid #87CEFA;
-	width: 30%;
+	width: 50%;
 	text-align: center;
 	margin: auto;
 }
