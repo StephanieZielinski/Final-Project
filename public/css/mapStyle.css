@@ -1,10 +1,16 @@
 html, body, #map_canvas {
     height: 100%;
     width: 100%;
+    font-family: helvetica, arial;
 }
 
 #map_canvas {
     position: relative;
+}
+
+h2{
+  font-family: 'Lobster', cursive;
+
 }
 
 .angular-google-map-container {
@@ -27,12 +33,25 @@ html, body, #map_canvas {
 
 #map{
   height: 400px;
-  width: 400px;
+  width: 100%;
 }
 
 .resultListing{
 border: 1px solid black;
-width: 400px;
+width: 50%;
 margin-top: 2px;
 background-color: lightgrey;
+border-color: rgba(121, 201, 158, 1);
+padding: 5 px;
+margin-left: auto;
+margin-right: auto;
+
 }
+
+
+/*
+$color1: rgba(74, 66, 56, 1);
+$color2: rgba(77, 83, 89, 1);
+$color3: rgba(80, 132, 132, 1);
+$color4: rgba(121, 201, 158, 1);
+$color5: rgba(151, 219, 79, 1);*/

@@ -1,6 +1,11 @@
 <h1>Add Bathroom Review</h1>
 
-<div class="reviewform">
+
+<div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+
+<div id="container">
 
 <form>
   <h3>Location Name</h3>
@@ -12,11 +17,12 @@
 
 
   <h3>Bathroom Rating</h3>
-  <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One *<br>
-  <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two **<br>
-  <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three ***<br>
-  <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four ****<br>
-  <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five *****<br>
+
+  <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One<br>
+  <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two<br>
+  <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three<br>
+  <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four<br>
+  <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five<br>
 
 
   <h3>Public or Business</h3>

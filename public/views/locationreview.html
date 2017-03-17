@@ -13,7 +13,6 @@
         <span ng-repeat="review in locationReviewsArray">
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
-                <p>ID: {{review.googleid}}</p>
                 <li ng-if="review.family === true">Family Friendly</li>
                 <li ng-if="review.handicap === true">Handicap Accessible</li>
                 <li ng-if="review.separate != null">Gender Separate</li>
