@@ -10,7 +10,7 @@
   background: linear-gradient(
                      rgba(20,20,20, .55),
                      rgba(20,20,20, .55)),
-                     url('http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg') no-repeat center center fixed;
+                     url(http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg) no-repeat center center fixed;
 }
 
 body {
@@ -42,10 +42,43 @@ body {
   padding: 5px;
 }
 
-.topper a:hover {
+/*.topper a:hover {
   opacity: 1;
-}
+}*/
 
 .view {
   background-color: white;
+}
+
+#container {
+	padding: 10px;
+	background-color: #C1DBC0;
+  border-radius: 10px;
+	border: 15px solid #87CEFA;
+	width: 30%;
+	text-align: center;
+	margin: auto;
+}
+
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: gold;
 }
