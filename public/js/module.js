@@ -43,7 +43,12 @@ var app = angular.module('privyMod', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
-  .when('/addreview/:placeId', {
+
+    .otherwise('/landing.html', {
+     controller:'privyController',
+     templateUrl: 'views/addreview.html'
+  })
+    .when('/addreview/:placeId', {
      controller:'privyController',
      templateUrl: 'views/addreview.html'
   })
