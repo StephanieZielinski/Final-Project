@@ -46,8 +46,7 @@ app.factory('privyService', function($http) {
     }).then(function successCallback(response) {
       console.log(response);
       console.log(review);
-
-      reviewList = response.data;
+      var path = "#/locationreview/review.id";
     });
     return promise;
   };
