@@ -23,6 +23,7 @@
     <input type="text" ng-model="search" placeholder="Search"><br>
 
     <h3>{{locationReviewsArray[0].name}}</h3>
+    <!-- add average rating for this location. review.rating(average) -->
     <p ng-if="review.type != null">{{review.type}}</p>
 
 
@@ -33,7 +34,9 @@
                 <li ng-if="review.handicap === true">Handicap Accessible</li>
                 <li ng-if="review.separate != null">Gender Separate</li>
                 <li ng-if="review.neutral != null">Gender Neutral</li>
-                <li ng-if="review.single != null">Single Stall</li>
+                <li ng-if="review.single != null">Single Stall</li> <br>
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                <img src="images/toilet2.jpg" alt="" id="toilet2">
                 <hr>
         </span>
 </div>

@@ -20,7 +20,7 @@
 
     <!-- <a href="results/family">family</a> -->
 
-        <span ng-repeat="review in reviewList | filter:search">
+        <span ng-repeat="review in reviewList | filter:search" class="resultsBlock">
           <div ng-if="review.family === true">
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>
@@ -32,8 +32,10 @@
                 <li ng-if="review.handicap === true">Handicap Accessible</li>
                 <li ng-if="review.separate != null">Gender Separate</li>
                 <li ng-if="review.neutral != null">Gender Neutral</li>
-                <li ng-if="review.single != null">Single Stall</li>
-                <hr>
+                <li ng-if="review.single != null">Single Stall</li><br>
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                <img src="images/toilet2.jpg" alt="" id="toilet2">
+
           </div>
         </span>
 </div>

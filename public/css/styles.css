@@ -44,9 +44,9 @@ body {
   text-decoration: none;
   text-align: center;
   margin: 28px;
-  font-family: 'Lobster', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
   /*text-shadow: 1px 1px #C1A78D;*/
-  letter-spacing: .5;
+  letter-spacing: .75;
   opacity: .85;
   padding: 5px;
 }
@@ -89,7 +89,7 @@ body {
    content: "\2605";
    position: absolute;
    left: 0;
-   fill: red; 
+   fill: red;
    color: gold;
 }
 
@@ -117,9 +117,9 @@ opacity: .85;
 }
 
 nav{
-font-family: 'Lobster', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
 text-decoration-color: rgba(0, 0, 0, 1);
-size: 20px
+size: 20px;
 
 }
 footer {
@@ -127,4 +127,30 @@ height: 100px;
 width: 100%;
 background-color: rgba(197, 195, 198, 1);
 opacity: .85;
+}
+
+.results {
+  color: rgb(69, 73, 70);
+  text-align: left;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  padding-left: 1.2%;
+  background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
+}
+
+.results span{
+  margin-bottom: 25px;
+}
+
+#toilet2 {
+  height: 50px;
+  width: 50px;
+}
+
+.featureDisplay {
+  margin-left: 75%;
+  border: solid 1px black;
+}
+
+.resultsBlock {
+  background-color: rgba(220, 220, 221, .3)
 }
