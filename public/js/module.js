@@ -66,6 +66,10 @@ app.config(function($routeProvider, $locationProvider){
   .when('/thankyou', {
     controller: 'privyController',
     templateUrl: 'views/thankyou.html'
+  })
+  .otherwise('/privy', {
+    controller: 'privyController',
+    templateUrl: 'views/landing.html'
   });
 
   $locationProvider.hashPrefix('');
