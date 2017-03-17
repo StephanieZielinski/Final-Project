@@ -68,6 +68,42 @@ app.config(function($routeProvider, $locationProvider){
     controller:'mapController',
     templateUrl: 'views/select.html'
   })
+  .when('/familyFriendly', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/familyResults.html'
+  })
+  .when('/genderNeutral', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/genderNeutral.html'
+  })
+  .when('/handicap', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/handicap.html'
+  })
+  .when('/genderSeparate', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/genderSeparate.html'
+  })
+  .when('/fiveStar', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/fiveStar.html'
+  })
+  .when('/fourStar', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/fourStar.html'
+  })
+  .when('/threeStar', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/threeStar.html'
+  })
+  .when('/twoStar', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/twoStar.html'
+  })
+  .when('/oneStar', {
+    controller: 'privyController',
+    templateUrl: 'views/filters/oneStar.html'
+  })
   .when('/thankyou', {
     controller: 'privyController',
     templateUrl: 'views/thankyou.html'

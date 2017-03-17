@@ -1,5 +1,21 @@
 <h1>Add Bathroom Review</h1>
 
+<div class="">
+  <a href="#/select">Gotta Go?</a>
+  <a href="#/results">View Reviews</a>
+  <br>
+  <a href="#/results">All Reviews</a>
+  <a href="#/genderSeparate">Gender Separate</a>
+  <a href="#/genderNeutral">Gender Neutral</a>
+  <a href="#/handicap">Handicap</a>
+  <a href="#/familyFriendly">Family Friendly</a>
+  <br>
+  <a href="#/fiveStar">5-Star</a>
+  <a href="#/fourStar">4-Star</a>
+  <a href="#/threeStar">3-Star</a>
+  <a href="#/twoStar">2-Star</a>
+  <a href="#/oneStar">1-Star</a>
+</div>
 
 <div class="rating">
 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
@@ -7,7 +23,7 @@
 
 <div id="container">
 
-  <img class="addReviewLogo" src="images/privyLogo.png" alt="">
+  <!-- <img class="addReviewLogo" src="images/privyLogo.png" alt=""> -->
 
 <form>
 
@@ -36,7 +52,7 @@
   <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
 
 
-  <button type="button" ng-click="submitToReviews(review)"><a href="#/thankyou">Submit Review</a></button>
+  <button type="button" ng-click="submitToReviews(review)"><a href="#/locationreview/{{result.id}}">Submit Review</a></button>
   <!-- Add route <param name="" value=""> -->
 
 </form>

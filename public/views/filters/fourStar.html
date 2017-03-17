@@ -1,4 +1,4 @@
-<h1>Results Page</h1>
+<h1>4 Star Review Results Page</h1>
 <div class="results">
   <div class="">
     <a href="#/select">Gotta Go?</a>
@@ -19,18 +19,21 @@
 
     <input type="text" ng-model="search" placeholder="Search"><br>
 
+    <!-- <a href="results/family">family</a> -->
 
         <span ng-repeat="review in reviewList | filter:search">
+          <div ng-if="review.rating === 4">
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>
-                <h5>Address: {{review.address}}</h5>
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
+                <!-- <p>ID: {{review.googleid}}</p> -->
                 <li ng-if="review.family === true">Family Friendly</li>
                 <li ng-if="review.handicap === true">Handicap Accessible</li>
                 <li ng-if="review.separate != null">Gender Separate</li>
                 <li ng-if="review.neutral != null">Gender Neutral</li>
                 <li ng-if="review.single != null">Single Stall</li>
                 <hr>
+          </div>
         </span>
 </div>
