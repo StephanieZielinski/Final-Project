@@ -11,6 +11,16 @@
 
   <title>Privy</title>
 </head>
+<header>
+  <nav>
+    <span><a href="#/results">All Reviews</a></span>
+    <span><a href="#/genderSeparate">Gender Separate</a></span>
+    <span><a href="#/genderNeutral">Gender Neutral</a></span>
+    <span><a href="#/handicap">Handicap</a></span>
+    <span><a href="#/familyFriendly">Family Friendly</a></span>
+  </nav>
+</header>
+
 
 <body  ng-controller="privyController">
 
@@ -23,9 +33,10 @@
 
 
 
-
 <div class="view">
   <ng-view></ng-view>
+
+  <footer></footer>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

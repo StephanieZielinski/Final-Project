@@ -89,6 +89,7 @@ body {
    content: "\2605";
    position: absolute;
    left: 0;
+   fill: red; 
    color: gold;
 }
 
@@ -106,5 +107,24 @@ padding: 10px;
 background-color: #C1DBC0;
 border-radius: 10px;
 border: 10px solid #87CEFA;*/
+}
 
+header {
+height: 100px;
+width: 100%;
+background-color: rgba(197, 195, 198, 1);
+opacity: .85;
+}
+
+nav{
+font-family: 'Lobster', cursive;
+text-decoration-color: rgba(0, 0, 0, 1);
+size: 20px
+
+}
+footer {
+height: 100px;
+width: 100%;
+background-color: rgba(197, 195, 198, 1);
+opacity: .85;
 }
