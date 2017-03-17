@@ -4,22 +4,20 @@
 
 
 <div class="selectcontainer">
-  <a href ="#/results">Gender Separate</a>
-  <a href ="#/results">Gender Neutral</a>
-  <a href ="#/results">Handicap</a>
-  <a href ="#/results">Family Friendly</a>
+    <a href="#/results">Gender Separate</a>
+    <a href="#/results">Gender Neutral</a>
+    <a href="#/results">Handicap</a>
+    <a href="#/results">Family Friendly</a>
 </div>
 
 
 
-  <div id="map">  </div>
+<div id="map"> </div>
 
 <br>
 <div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:1">
-<p>{{result.name}}</p>
-<p>{{result.vicinity}}</p>
-<p>Open now: {{result.opening_hours.open_now}}<p>
-
-
-<a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="#/addreview/{{result.id}}">Add Review </a>  <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+    <p>{{result.name}}</p>
+    <p>{{result.vicinity}}</p>
+    <p>Open now: {{result.opening_hours.open_now}}</p>
+    <a ng-href="#/locationreview/{{result.id}}">View Reviews </a> <a href="#/addreview/{{result.id}}">Add Review </a> <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
 </div>
