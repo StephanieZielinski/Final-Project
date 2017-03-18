@@ -15,8 +15,6 @@ $scope.review = {};
       console.log(review);
       privyService.addReview(review).then(function(){
         $scope.reviewList = privyService.updateReviews();
-        var path = "#/locationreview/review.id";
-        window.location.href = path;
       });
     };
 
@@ -24,6 +22,7 @@ $scope.review = {};
   //   privyService.addId(id).then(function()
   //     $scop
   // }
+
 
   console.log($routeParams.placeId);
   console.log($routeParams.type);

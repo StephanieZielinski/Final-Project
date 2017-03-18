@@ -80,7 +80,7 @@ app.controller('mapController', function($scope, privyService, $http, $location)
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
+          infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({

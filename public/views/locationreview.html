@@ -6,7 +6,7 @@
   <a href="#/results">View Reviews</a>
   <br>
   <a href="#/results">All Reviews</a>
-  <a href="#/genderSeparate">Gender Separate</a>
+  <a href="#/genderSeparate">Gender Seperate</a>
   <a href="#/genderNeutral">Gender Neutral</a>
   <a href="#/handicap">Handicap</a>
   <a href="#/familyFriendly">Family Friendly</a>
@@ -18,13 +18,18 @@
   <a href="#/oneStar">1-Star</a>
 </div>
 
+<div ng-repeat="(detail, place) in placeDetails">
+  <p ng-if="detail === 'name'">{{place}}</p>
+  <p ng-if="detail == 'vicinity'">{{place}}</p>
+  <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
+</div>
+
 <div class="results">
 
     <input type="text" ng-model="search" placeholder="Search"><br>
 
-    <h3>{{locationReviewsArray[0].name}}</h3>
     <p ng-if="review.type != null">{{review.type}}</p>
-
+    <div id="locationMap"> </div>
 
         <span ng-repeat="review in locationReviewsArray">
                 <h5>Rating: {{review.rating}}</h5>
