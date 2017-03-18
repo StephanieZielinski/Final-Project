@@ -17,9 +17,9 @@
   <a href="#/oneStar">1-Star</a>
 </div>
 
-<div class="rating">
+<!-- <div class="rating">
 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div>
+</div> -->
 
 <div id="container">
 
@@ -28,13 +28,18 @@
 <form>
 
   <h3>Bathroom Rating</h3>
-
+  <!-- <div class="rating">
+    <span><input type="radio" name="rating" id="str5" ng-value="1" ng-model="review.rating"><label for="str1"></label></span>
+    <span><input type="radio" name="rating" id="str4" ng-value="2" ng-model="review.rating"><label for="str2"></label></span>
+    <span><input type="radio" name="rating" id="str3" ng-value="3" ng-model="review.rating"><label for="str3"></label></span>
+    <span><input type="radio" name="rating" id="str2" ng-value="4" ng-model="review.rating"><label for="str4"></label></span>
+    <span><input type="radio" name="rating" id="str1" ng-value="5" ng-model="review.rating"><label for="str5"></label></span>
+  </div> -->
   <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One<br>
   <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two<br>
   <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three<br>
   <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four<br>
   <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five<br>
-
 
   <h3>Public or Business</h3>
   <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type"> Business </br>
@@ -52,8 +57,7 @@
   <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
 
 
-  <button type="button" ng-click="submitToReviews(review)"><a href="#/thankyou">Submit Review</a></button>
-
+  <button type="button" ng-click="submitToReviews(review)"><a>Submit Review</a></button>
   <!-- Add route <param name="" value=""> -->
 
 </form>
