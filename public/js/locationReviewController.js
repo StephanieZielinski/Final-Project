@@ -1,4 +1,3 @@
-
 var app = angular.module('privyMod');
 
 app.controller('locationReviewController', function($scope, privyService, $http, $routeParams, $location) {
@@ -45,7 +44,7 @@ $scope.url = "";
               var marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location,
-                icon: "img/tp1.png",
+                icon: "img/toilet_box1.png",
                 animation: google.maps.Animation.DROP
               });
               google.maps.event.addListener(marker, 'click', function() {
@@ -119,6 +118,10 @@ geocodePlaceId(geocoder, map, infowindow);
             //           marker.setVisible(true);
 
     // $routeParams.placeId;
+
+    privyService.getReviews().then(function(){
+      $scope.reviewList = privyService.updateReviews();
+    });
 
     privyService.locationReviews($routeParams.placeId).then(function(data) {
         $scope.locationReviewsArray = privyService.updateReviews();
