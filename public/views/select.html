@@ -1,36 +1,17 @@
-<h2>What Type of Bathroom Are You Looking For?</h2>
-
-
-
-
-<div class="selectcontainer">
-  <div class="">
-    <a href="#/select">Gotta Go?</a>
-    <a href="#/results">View Reviews</a>
-    <br>
-    <a href="#/results">All Reviews</a>
-    <a href="#/genderSeparate">Gender Separate</a>
-    <a href="#/genderNeutral">Gender Neutral</a>
-    <a href="#/handicap">Handicap</a>
-    <a href="#/familyFriendly">Family Friendly</a>
-    <br>
-    <a href="#/fiveStar">5-Star</a>
-    <a href="#/fourStar">4-Star</a>
-    <a href="#/threeStar">3-Star</a>
-    <a href="#/twoStar">2-Star</a>
-    <a href="#/oneStar">1-Star</a>
-  </div>
+<div privynav></div>
+<div id="selectHeader">
+    <h2>What Type of Bathroom Are You Looking For?</h2>
 </div>
 
-
 <div id="map"> </div>
-{{distanceMatrix.rows[0].elements[1].distance.text}}
+
 
 
   <!-- Distance: {{x[$index].elements[$index].distance.text}} Time: {{x[$index].elements[$index].duration.text}} -->
 
 
 <br>
+
 <div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:0">
 
 Distance: {{distanceMatrix.rows[0].elements[$index].distance.text}} Travel Time: {{distanceMatrix.rows[0].elements[$index].duration.text}}

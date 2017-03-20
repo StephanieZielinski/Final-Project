@@ -1,39 +1,27 @@
-/*.homePage {
-
-    background-color:rgba(234, 224, 204, 1);
-    background-size: 100% 100%;
-    height:100%;
-    width:100%;
-}*/
-
 .homePage {
-  padding-bottom: 100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-                     rgba(20,20,20, .55),
-                     rgba(20,20,20, .55)),
-                     url(http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg) no-repeat center center fixed;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55)), url(http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg) no-repeat center center fixed;
 }
 
 body {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .homeLogo {
-  margin-bottom: -200px;
-  margin-top: -100px;
-  opacity: .5;
+    margin-bottom: -200px;
+    margin-top: -100px;
+    opacity: .5;
 }
 
 .addReviewLogo {
-  width: 60%;
-  margin-bottom: -200px;
-  margin-top: -100px;
-  opacity: .5;
+    width: 60%;
+    margin-bottom: -200px;
+    margin-top: -100px;
+    opacity: .5;
 }
 
 .topper a {
@@ -51,15 +39,45 @@ body {
   padding: 1px;
 }
 
-/*.topper a:hover {
-  opacity: 1;
-}*/
 
 .view {
-  background-color: white;
+    background-color: white;
 }
 
 #container {
+    padding: 10px;
+    background-color: #C1DBC0;
+    border-radius: 10px;
+    border: 15px solid #87CEFA;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+
+.rating>span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+
+.rating>span:hover, .rating>span:hover~span {
+    color: transparent;
+}
+
+.rating>span:hover:before, .rating>span:hover~span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    fill: red;
+    color: gold;
+}
+/*=======
 	padding: 10px;
 	background-color: #C1DBC0;
   border-radius: 10px;
@@ -67,40 +85,66 @@ body {
 	width: 50%;
 	text-align: center;
 	margin: auto;
-}
-
-/*star rating styling*/
-/*.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: center;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover,
-.rating > span:hover ~ span {
-  color: transparent;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0;
-   fill: red;
-   color: gold;
 }*/
 
-.locationReviewBox{
+/*Star Rating CSS*/
+..txt-center {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
+
+/*.locationReviewBox{
 border: 1px solid black;
 width: 50%;
-margin-top: 2px;
+margin-top: 2px;*/
 /*background-color: lightgrey;*/
 /*border-color: rgba(121, 201, 158, 1);*/
 /*padding: 5 px;*/
 /*margin-left: auto;
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda
 margin-right: auto;
 
 padding: 10px;
@@ -109,7 +153,13 @@ border-radius: 10px;
 border: 10px solid #87CEFA;*/
 }
 
-header {
+/*header {
+<<<<<<< HEAD
+    height: 100px;
+    width: 100%;
+    background-color: rgba(197, 195, 198, 1);
+    opacity: .85;
+=======
 height: 50px;
 width: 100%;
 background-color: rgba(197, 195, 198, 1);
@@ -118,46 +168,158 @@ text-align: right;
 padding-right: 10px;
 font: black;
 
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda
+}*/
+
+nav {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration-color: rgba(0, 0, 0, 1);
+    size: 20px;
 }
 
-nav{
-  font-family: 'Fira Sans Condensed', sans-serif;
-text-decoration-color: rgba(0, 0, 0, 1);
-size: 20px;
-
-}
 footer {
-height: 100px;
-width: 100%;
-background-color: rgba(197, 195, 198, 1);
-opacity: .85;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(197, 195, 198, .85);
+    margin: 0;
+    background-color: rgb(57, 58, 59);
+    border-radius: 0;
+    border: outset 3px rgb(57, 58, 59);
+    text-align: center;
+}
+
+footer li {
+    display: inline;
+    text-decoration: none;
+    margin-left: 35px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 20pt;
+}
+
+.pagination li a {
+  color: rgba(197, 195, 198, .85);
+  background-color: rgb(57, 58, 59);
+}
+
+.pagination li a:hover {
+  background-color: rgba(197, 195, 198, .85);
+  color: rgb(57, 58, 59);
 }
 
 .results {
-  color: rgb(69, 73, 70);
+    color: rgb(69, 73, 70);
+    text-align: left;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    padding-left: 1.2%;
+    background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
+  /*color: rgb(69, 73, 70);
   text-align: left;
   font-family: 'Fira Sans Condensed', sans-serif;
   background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
   padding-left: 1.2%;
 
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda*/
 }
 
-.results span{
-  margin-bottom: 25px;
+.results span {
+    margin-bottom: 25px;
 }
 
 #toilet2 {
-  height: 50px;
-  width: 50px;
-}
-
-.featureDisplay {
-  margin-left: 75%;
-  border: solid 1px black;
+    height: 200px;
+    width: 200px;
 }
 
 .resultsBlock {
-  background-color: rgba(220, 220, 221, .3)
+    display: inline-table;
+    width: 47%;
+    height: 350px;
+    background-color: rgba(32, 32, 33, 0.8);
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    color: rgb(184, 194, 198);
+    box-shadow: 5px 5px 5px rgb(50, 50, 49);
+}
+
+.resultsBlock:hover {
+  background: linear-gradient( rgba(20, 20, 20, .9), rgba(20, 20, 20, .9)), url('http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg') no-repeat center center fixed;
+  color: rgb(200, 200, 196);
+  font-size: 12pt;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(32, 32, 33, 0.8);;
+}
+
+.navbar-default {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(57, 58, 59);
+    border-radius: 0;
+    border: outset 3px rgb(57, 58, 59);
+}
+
+.navbar-default li a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navIcon {
+    background-color: rgb(57, 58, 59);
+    border-radius: 10px;
+    height: 70px;
+    width: 70px;
+}
+
+#navPrivyIcon {
+    width: 70px;
+    height: 70px;
+}
+
+.navIcon:hover {
+    background-color: rgba(126, 131, 136, 0.3);
+}
+
+.navbar-default .navButton {
+    padding-top: 15px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: rgb(228, 230, 226) !important;
+    background-color: rgb(57, 58, 59);
+    border-radius: 10px;
+    height: 70px;
+    width: 70px;
+}
+
+.navButton:hover {
+    background-color: rgba(126, 131, 136, 0.3) !important;
+}
+
+.page-header {
+    text-align: left;
+    margin: 0;
+    padding-top: 160px;
+    padding-bottom: 20px;
+    /*background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');*/
+    background-image: url('http://2.bp.blogspot.com/-lAzLF7fO5zM/UvxkNnzliGI/AAAAAAAAF4A/LHlF6ITP1Yk/s1600/grout02.jpg');
+    background-size: cover;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+#selectHeader {
+  padding-top: 100px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .navbar-default .navButton{
+    margin-left: 44%;
+  }
+  .navbar-default {
+    position: absolute;
+  }
+  .resultsBlock {
+    width: 95%;
+  }
 }
 
 .one {
@@ -202,3 +364,4 @@ opacity: .85;
   border-radius: 40%;
   margin-left: auto;
   margin-right: auto;
+}

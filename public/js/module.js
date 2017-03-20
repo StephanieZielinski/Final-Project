@@ -36,8 +36,13 @@ var app = angular.module('privyMod', ['ngRoute']);
 //     $scope.gPlace;
 // }
 
-
-
+app.directive('privynav', function(){
+  return {
+    restrict: 'EA',
+    templateUrl: 'partials/navbar.html',
+    replace: false
+  };
+});
 
 
 

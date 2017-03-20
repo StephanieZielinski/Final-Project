@@ -1,38 +1,22 @@
-<h1>4 Star Review Results Page</h1>
+<div privynav></div>
+<div class="page-header">
+  <h1>Four Star<small>Reviews</small></h1>
+</div>
+
 <div class="results">
-  <div class="">
-    <a href="#/select">Gotta Go?</a>
-    <br>
-    <a href="#/results">All Reviews</a>
-    <a href="#/genderSeparate">Gender Separate</a>
-    <a href="#/genderNeutral">Gender Neutral</a>
-    <a href="#/handicap">Handicap</a>
-    <a href="#/familyFriendly">Family Friendly</a>
-    <br>
-    <a href="#/fiveStar">5-Star</a>
-    <a href="#/fourStar">4-Star</a>
-    <a href="#/threeStar">3-Star</a>
-    <a href="#/twoStar">2-Star</a>
-    <a href="#/oneStar">1-Star</a>
-  </div>
 
-    <input type="text" ng-model="search" placeholder="Search"><br>
-
-    <!-- <a href="results/family">family</a> -->
-
-        <span ng-repeat="review in reviewList | filter:search">
-          <div ng-if="review.rating === 4">
+    <span ng-repeat="review in reviewList | filter:search">
+          <div ng-if="review.rating === 4" class="resultsBlock">
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>
                 <h5>Rating: {{review.rating}}</h5>
-                <p>Comment: {{review.comment}}</p>
-                <!-- <p>ID: {{review.googleid}}</p> -->
+
                 <li ng-if="review.family === true">Family Friendly</li>
                 <li ng-if="review.handicap === true">Handicap Accessible</li>
                 <li ng-if="review.separate != null">Gender Separate</li>
                 <li ng-if="review.neutral != null">Gender Neutral</li>
                 <li ng-if="review.single != null">Single Stall</li>
-                <hr>
+
           </div>
         </span>
 </div>
