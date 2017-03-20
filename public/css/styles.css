@@ -4,9 +4,26 @@
     height: 100%;
     background: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5795305ae4fcb5084392d6f2/1469395062902/IMG_6804.jpg?format=1000w') no-repeat center center fixed;
     background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));
+    background-color: black;
 }
 
 
+  @media only screen and (max-width : 768px) {
+    .homePage .navbar-default .navButton{
+      margin-left: 44%;
+    }
+    .navbar-default {
+      position: absolute;
+    }
+    .resultsBlock {
+      width: 95%;
+    }
+    .page-header {
+      background-image: url('data:application/octet-stream;base64,PGh0bWw+CjxoZWFkPgo8dGl0bGU+NDAwIEJhZCBSZXF1ZXN0PC90aXRsZT4KPHN0eWxlPiBib2R5IHsgYmFja2dyb3VuZC1jb2xvcjogI0YyRjJGMjsgY29sb3I6ICMzRTNFM0U7IGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHg7IH0gcHJlIHsgd29yZC13cmFwOiBicmVhay13b3JkOyB9IDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxoMT40MDAgQmFkIFJlcXVlc3Q8L2gxPgo8cD48cHJlPnE3U3JlV00wL3FCMHRHMU1nIEAgTW9uLCAyMCBNYXIgMjAxNyAxODoyMDo1MSBHTVQ8L3ByZT4KPHA+PHByZT5TRUMtNDM8L3ByZT4KPHA+PHByZT48L3ByZT4KPC9ib2R5Pgo8L2h0bWw+');
+      background-position: center;
+    }
+
+}
 
 body {
     text-align: center;
@@ -287,5 +304,5 @@ h4 {
 font-family: 'Yatra One', cursive;
 color: white;
 text-align: center;
-size: 90px; 
+size: 90px;
 }
