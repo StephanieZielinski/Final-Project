@@ -1,39 +1,18 @@
-<h2>What Type of Bathroom Are You Looking For?</h2>
-
-
-
-
-<div class="selectcontainer">
-  <div class="">
-    <a href="#/select">Gotta Go?</a>
-    <a href="#/results">View Reviews</a>
-    <br>
-    <a href="#/results">All Reviews</a>
-    <a href="#/genderSeparate">Gender Separate</a>
-    <a href="#/genderNeutral">Gender Neutral</a>
-    <a href="#/handicap">Handicap</a>
-    <a href="#/familyFriendly">Family Friendly</a>
-    <br>
-    <a href="#/fiveStar">5-Star</a>
-    <a href="#/fourStar">4-Star</a>
-    <a href="#/threeStar">3-Star</a>
-    <a href="#/twoStar">2-Star</a>
-    <a href="#/oneStar">1-Star</a>
-  </div>
+<div privynav></div>
+<div id="selectHeader">
+    <h2>What Type of Bathroom Are You Looking For?</h2>
 </div>
-
-
 
 <div id="map"> </div>
 
 <br>
 <div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:1">
+  
+    <p>{{result.name}}</p>
+    <p>{{result.vicinity}}</p>
+    <p>Open now: {{result.opening_hours.open_now}}</p>
 
-<p>{{result.name}}</p>
-<p>{{result.vicinity}}</p>
-<p>Open now: {{result.opening_hours.open_now}}</p>
 
-
-<a ng-href="#/locationreview/{{result.id}}">View Review </a>	&nbsp;	<a href="#/addreview/{{result.id}}">Add Review </a>	&nbsp;	<a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+    <a ng-href="#/locationreview/{{result.id}}">View Review </a> &nbsp; <a href="#/addreview/{{result.id}}">Add Review </a> &nbsp; <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
 
 </div>

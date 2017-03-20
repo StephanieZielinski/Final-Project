@@ -1,33 +1,14 @@
-
-<p>location review page</p>
-
-<div class="">
-  <a href="#/select">Gotta Go?</a>
-  <a href="#/results">View Reviews</a>
-  <br>
-  <a href="#/results">All Reviews</a>
-  <a href="#/genderSeparate">Gender Separate</a>
-  <a href="#/genderNeutral">Gender Neutral</a>
-  <a href="#/handicap">Handicap</a>
-  <a href="#/familyFriendly">Family Friendly</a>
-  <br>
-  <a href="#/fiveStar">5-Star</a>
-  <a href="#/fourStar">4-Star</a>
-  <a href="#/threeStar">3-Star</a>
-  <a href="#/twoStar">2-Star</a>
-  <a href="#/oneStar">1-Star</a>
+<div privynav></div>
+<div class="page-header">
+  <h1>Location's Name<small>Reviews</small></h1>
 </div>
-
 <div class="results">
-
-    <input type="text" ng-model="search" placeholder="Search"><br>
-
     <h3>{{locationReviewsArray[0].name}}</h3>
     <!-- add average rating for this location. review.rating(average) -->
     <p ng-if="review.type != null">{{review.type}}</p>
 
-
         <span ng-repeat="review in locationReviewsArray">
+            <div class="resultsBlock">
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
                 <li ng-if="review.family === true">Family Friendly</li>
@@ -36,7 +17,6 @@
                 <li ng-if="review.neutral != null">Gender Neutral</li>
                 <li ng-if="review.single != null">Single Stall</li> <br>
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                <img src="images/toilet2.jpg" alt="" id="toilet2">
-                <hr>
+          </div>
         </span>
 </div>

@@ -1,21 +1,8 @@
-<h1>Add Bathroom Review</h1>
-
-<div class="">
-  <a href="#/select">Gotta Go?</a>
-  <a href="#/results">View Reviews</a>
-  <br>
-  <a href="#/results">All Reviews</a>
-  <a href="#/genderSeparate">Gender Separate</a>
-  <a href="#/genderNeutral">Gender Neutral</a>
-  <a href="#/handicap">Handicap</a>
-  <a href="#/familyFriendly">Family Friendly</a>
-  <br>
-  <a href="#/fiveStar">5-Star</a>
-  <a href="#/fourStar">4-Star</a>
-  <a href="#/threeStar">3-Star</a>
-  <a href="#/twoStar">2-Star</a>
-  <a href="#/oneStar">1-Star</a>
+<div privynav></div>
+<div class="page-header">
+  <h1>Add Your Review<small></small></h1>
 </div>
+
 
 <div class="rating">
 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
@@ -29,6 +16,7 @@
 
   <h3>Bathroom Rating</h3>
 
+
   <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One<br>
   <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two<br>
   <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three<br>
@@ -37,22 +25,31 @@
 
 
   <h3>Public or Business</h3>
-  <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type"> Business </br>
-  <input type="radio" name="Type of Bathroom" value="Public" ng-model="review.type"> Public </br>
+  <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type" id="business">
+  <label for="business"> Business</label></br>
+  <input type="radio" name="Type of Bathroom" value="Public" ng-model="review.type" id="public">
+  <label for="public"> Public </label></br>
 
 
   <h3>Type of Bathroom</h3>
-  <input type="checkbox" name="Type of Bathroom" ng-value="separate" ng-model="review.separate">Gender Separate<br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral">Gender Neutral<br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap">Handicap<br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family">Family Friendly<br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="single-stall" ng-model="review.single">Single Stall<br>
+  <input type="checkbox" name="Type of Bathroom" ng-value="separate" ng-model="review.separate" id="genderseparate">
+  <label for="genderseparate">Gender Separate</label><br>
+  <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral" id="genderneutral">
+  <label for="genderneutral">Gender Neutral</label><br>
+  <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap" id="handicapCheckbox">
+  <label for="handicapCheckbox">Handicap</label><br>
+  <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family" id="familyCheckbox">
+  <label for="familyCheckbox">Family Friendly</label><br>
+  <input type="checkbox" name="Type of Bathroom" ng-value="single-stall" ng-model="review.single" id="singleCheckbox">
+  <label for="singleCheckbox">Single Stall</label><br>
 
   <h3>Comments</h3>
   <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
 
 
-  <button type="button" ng-click="submitToReviews(review)"><a href="#/thankyou">Submit Review</a></button>
+  <button type="button" ng-click="submitToReviews(review)">Submit
+    <!-- <a href="#/thankyou">Submit Review</a> -->
+  </button>
 
   <!-- Add route <param name="" value=""> -->
 
