@@ -9,8 +9,7 @@ html, body, #map_canvas {
 }
 
 h2{
-  font-family: 'Lobster', cursive;
-
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .angular-google-map-container {
