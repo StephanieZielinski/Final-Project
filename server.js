@@ -11,7 +11,7 @@ var client = new pg.Client(connectionString);
 
 var config = {
   user: 'opxeceunrpgebk', database: 'd4v5g9dp5h91jc', password: password, host: 'ec2-54-83-25-217.compute-1.amazonaws.com',
-  port: 5432, max: 3, idleTimeoutMillis: 30000, ssl: true
+  port: 5432, max: 50, idleTimeoutMillis: 30000, ssl: true
 };
 
 var pool = new pg.Pool(config);
@@ -37,7 +37,7 @@ var results = [];
 
    query.on('end', function(){
      console.log(results);
-     client.end();
+     done();
      res.json(results);
    });
 
@@ -74,7 +74,7 @@ console.log(review);
 
       query.on('end', function(){
       //  console.log(results);
-       client.end();
+       done();
        res.json(results);
       });
 
@@ -99,7 +99,7 @@ app.get('/results', function(req, res, next){
 
    query.on('end', function(){
     //  console.log(results);
-     client.end();
+     done();
      return res.json(results);
    });
 
