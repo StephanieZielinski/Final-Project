@@ -37,7 +37,7 @@ var results = [];
 
    query.on('end', function(){
      console.log(results);
-     client.end();
+     done();
      res.json(results);
    });
 
@@ -74,7 +74,7 @@ console.log(review);
 
       query.on('end', function(){
       //  console.log(results);
-       client.end();
+      done();
        res.json(results);
       });
 
@@ -95,11 +95,12 @@ app.get('/results', function(req, res, next){
 
    query.on('row', function(row){
      results.push(row);
+
    });
 
    query.on('end', function(){
     //  console.log(results);
-     client.end();
+     done();
      return res.json(results);
    });
 

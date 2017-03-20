@@ -3,6 +3,7 @@ var app = angular.module('privyMod');
 app.controller('privyController', function($scope, privyService, $http, $routeParams, $location) {
 
 $scope.review = {};
+$scope.titleTest = "REVIEW LOCATION TITLE";
 //  $scope.review.id = $routeParams.placeId;
   // console.log($scope.review.id);
 
