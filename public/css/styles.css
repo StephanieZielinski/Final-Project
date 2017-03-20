@@ -177,21 +177,19 @@ footer li {
     display: inline-table;
     width: 47%;
     height: 350px;
-    background-color: rgba(32, 32, 33, 0.35);
-    border-radius: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
     padding: 5px;
     margin: 5px;
     color: rgb(184, 194, 198);
-    /*box-shadow: 5px 5px 5px rgb(50, 50, 49);*/
 }
 
 .resultsBlock:hover {
-  /*background: linear-gradient( rgba(20, 20, 20, .9), rgba(20, 20, 20, .9)), url('http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg') no-repeat center center fixed;*/
   background-color: rgba(32, 32, 33, 0.8);
   color: rgb(200, 200, 196);
   font-size: 12pt;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(32, 32, 33, 0.8);;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px rgba(32, 32, 33, 0.8);
 }
 
 .navbar-default {
@@ -282,7 +280,12 @@ footer li {
     background-image: url('data:application/octet-stream;base64,PGh0bWw+CjxoZWFkPgo8dGl0bGU+NDAwIEJhZCBSZXF1ZXN0PC90aXRsZT4KPHN0eWxlPiBib2R5IHsgYmFja2dyb3VuZC1jb2xvcjogI0YyRjJGMjsgY29sb3I6ICMzRTNFM0U7IGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHg7IH0gcHJlIHsgd29yZC13cmFwOiBicmVhay13b3JkOyB9IDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxoMT40MDAgQmFkIFJlcXVlc3Q8L2gxPgo8cD48cHJlPnE3U3JlV00wL3FCMHRHMU1nIEAgTW9uLCAyMCBNYXIgMjAxNyAxODoyMDo1MSBHTVQ8L3ByZT4KPHA+PHByZT5TRUMtNDM8L3ByZT4KPHA+PHByZT48L3ByZT4KPC9ib2R5Pgo8L2h0bWw+');
     background-position: center;
   }
+
   #navPrivyIcon #container {
     padding-top: 13px;
+  }
+
+  #map-page-header {
+    font-size: 14pt;
   }
 }
