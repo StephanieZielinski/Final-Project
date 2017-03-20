@@ -1,26 +1,25 @@
 <div privynav></div>
-<div id="selectHeader">
-    <h2>What Type of Bathroom Are You Looking For?</h2>
+<div class="page-header">
+    <h1 id="map-page-header"><span>What Type of Bathroom Are You Looking For?<span></h1>
 </div>
 
 <div id="map"> </div>
 
+<!-- Distance: {{x[$index].elements[$index].distance.text}} Time: {{x[$index].elements[$index].duration.text}} -->
+
+<div class="results">
+
+    <span ng-repeat="result in resultsDisplay  | limitTo:15:0">
+      <div class="resultsBlock">
+        <h4>Distance: {{distanceMatrix.rows[0].elements[$index].distance.text}} Travel Time: {{distanceMatrix.rows[0].elements[$index].duration.text}} </h4>
+
+        <p>{{result.name}}</p>
+        <p>{{result.vicinity}}</p>
+        <p>Open now: {{result.opening_hours.open_now}}</p>
 
 
-  <!-- Distance: {{x[$index].elements[$index].distance.text}} Time: {{x[$index].elements[$index].duration.text}} -->
-
-
-<br>
-
-<div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:0">
-
-Distance: {{distanceMatrix.rows[0].elements[$index].distance.text}} Travel Time: {{distanceMatrix.rows[0].elements[$index].duration.text}}
-
-<p>{{result.name}}</p>
-<p>{{result.vicinity}}</p>
-<p>Open now: {{result.opening_hours.open_now}}</p>
-
-
-<a ng-href="#/locationreview/{{result.place_id}}">View Reviews </a>	&nbsp;	<a href="#/addreview/{{result.place_id}}">Add Review </a>	&nbsp;	<a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+        <a ng-href="#/locationreview/{{result.place_id}}">View Reviews </a> &nbsp; <a href="#/addreview/{{result.place_id}}">Add Review </a> &nbsp; <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+      </div>
+    </span>
 
 </div>
