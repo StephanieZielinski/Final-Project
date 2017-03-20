@@ -91,7 +91,7 @@ app.get('/results', function(req, res, next){
  pool.connect( function(err, client, done) {
 
 
-    var query = client.query('SELECT * FROM privy ORDER BY googleid');
+  var query = client.query('SELECT * FROM privy ORDER BY googleid');
 
    query.on('row', function(row){
      results.push(row);
