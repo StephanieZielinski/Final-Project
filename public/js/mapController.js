@@ -3,18 +3,48 @@ var app = angular.module('privyMod');
 app.controller('mapController', function($scope, privyService, $http, $location) {
 
 
-
   function initMap() {
 
+$scope.distanceMatrix = {};
     $scope.url = $location.path();
     console.log($scope.url);
+
+//TRY GEOLOCATION
+if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            $scope.pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infowindow.setPosition($scope.pos);
+            infowindow.setContent('Location found.');
+            map.setCenter($scope.pos);
+
+            searchNearby();
+
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infowindow.setPosition($scope.pos);
+                infowindow.setContent(browserHasGeolocation ?
+                                      'Error: The Geolocation service failed.' :
+                                      'Error: Your browser doesn\'t support geolocation.');
+              }
+
+
+
+
 
 // Initialize to DETROIT (lat/lng)
         var Detroit = {lat: 42.3360077, lng: -83.0508025};
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: Detroit,
-          zoom: 15,
+          zoom: 13,
           scrollwheel: false
         });
 
@@ -31,27 +61,31 @@ app.controller('mapController', function($scope, privyService, $http, $location)
 
         infowindow = new google.maps.InfoWindow();
 
-// Try Gelocation
 
 
 
 //Call places service with nearbySearch using following parameters
-
+function searchNearby(){
+console.log($scope.pos);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-          location: Detroit,
-          radius: 500,
-          type: ['restaurant,museum']
+          location: $scope.pos,
+           //radius: 5000,
+           openNow: true,
+           rankBy: google.maps.places.RankBy.DISTANCE,
+           types: ['restaurant']
         }, callback);
     //  }
-
+};
 
 //returns Google Places Data in results
       function callback(results, status) {
         console.log(results);
         $scope.resultsDisplay = results;
         console.log($scope.resultsDisplay);
-        console.log($scope.resultsDisplay[0].name);
+        console.log($scope.resultsDisplay[0].vicinity);
+
+
 
 //Loop for Google Places Markers
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -59,6 +93,11 @@ app.controller('mapController', function($scope, privyService, $http, $location)
             createMarker(results[i]);
           }
         }
+        createClosestMarker(results[0]);
+      //  for (var i = 1; i < 15 ; i++) {
+      //    $scope.distanceResponse.push(getDistance(results[i].vicinity));
+
+      //  }
       }
 
       function createMarker(place) {
@@ -71,16 +110,106 @@ app.controller('mapController', function($scope, privyService, $http, $location)
 
         });
 
+//Call Google distance Matrix to calculate distance
+//  $scope.distanceCalc = "";
+$scope.distanceResponse = "";
+        var origin = [$scope.pos]
+        var destination = [place.geometry.location];
+//console.log($scope.destinationArray);
+$scope.distanceArray = {};
+$scope.distanceResponse = [];
+        var service = new google.maps.DistanceMatrixService;
+       function getDistance(destinationCoordinates){
+        service.getDistanceMatrix({
+          origins: origin,
+          destinations: destinationCoordinates,
+          travelMode: 'DRIVING',
+          unitSystem: google.maps.UnitSystem.IMPERIAL,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status) {
+          if (status !== 'OK') {
+            alert('Error was: ' + status);
+          } else {
+            var originList = response.originAddresses;
+            var destinationList = response.destinationAddresses;
+    //      $scope.distanceCalc = response.rows[0].elements[0].distance.text;
+console.log(response);
+$scope.distanceMatrix = response;
+$scope.$apply();
+
+console.log($scope.distanceMatrix);
+
+return response;
+
+            };
+
+            //return response;
+
+});
+// return $scope.distanceMatrix;
+}
+
+// set place details object to scope
+
+var destination = [];
+for (var j = 0; j < 15;j++){
+destination.push($scope.resultsDisplay[j].vicinity);
+ $scope.distanceResponse.push(getDistance(destination));
+// console.log($scope.distanceResponse);
+
+}
+
+//console.log($scope.distanceResponse);
+//console.log($scope.matrixResponse);
+
+  //    console.log($scope.distanceCalc);
+      $scope.placeObj = place;
+  //    console.log($scope.placeObj.name);
+    //  $scope.nameList.push($scope.placeObj.name);
+      $scope.$apply();
+
+
+        google.maps.event.addListener(marker, 'click', function() {
+          console.log($scope.distanceMatrix);
+          $scope.arrayIndex = $scope.resultsDisplay.indexOf($scope.resultsDisplay.vicinity);
+          console.log($scope.resultsDisplay);
+          console.log(place);
+          infowindow.setContent("<a href='#/locationreview/" + place.place_id + "'>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>" + "<br>" + $scope.distanceMatrix.rows[0].elements[0].distance.text);
+          infowindow.open(map, this);
+          var service = new google.maps.places.PlacesService(map);
+          service.getDetails({
+            placeId: place.place_id
+          }, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              console.log(place);
+            }
+          });
+        });
+
+      }
+
+
+      function createClosestMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location,
+      //    icon: "img/tp1.png",
+          animation: google.maps.Animation.BOUNCE
+
+        });
+
+
       $scope.placeObj = place;
       console.log($scope.placeObj.name);
     //  $scope.nameList.push($scope.placeObj.name);
-      $scope.testArray = [1,2,3,4,5];
       $scope.$apply();
 
 
         google.maps.event.addListener(marker, 'click', function() {
           console.log(place.place_id);
-          infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
+          infowindow.setContent("<a href='#/locationreview/" + place.place_id + "'>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
           infowindow.open(map, this);
           var service = new google.maps.places.PlacesService(map);
           service.getDetails({
@@ -106,88 +235,5 @@ console.log($scope.testArray);
 
 
 console.log($scope.nameList);
-// console.log($scope.nameList[3]);
-
-// console.log($scope.testArray);
-
-
-
-//   $scope.map = { center: {latitude: 42.3360077, longitude: -83.0508025}, zoom: 8,};
-//
-//   $scope.options = {
-//     scrollwheel: false};
-//
-// $scope.test = "TEST EXPRESSION";
-// // console.log($scope.gPlace);
-//
-//
-// function initMap(){
-// var detroit = {latitude: 42.3360077, longitude: -83.0508025};
-// // var service = new google.maps.places.PlacesService($scope.map);
-//
-// $scope.gPlace.nearbySearch({
-//   location: detroit,
-//   radius: 500,
-//   type: ['store']
-// }, callback);
-//
-// // function callback(results, status) {
-// //   if (status === google.maps.places.PlacesServiceStatus.OK) {
-// //     for (var i = 0; i < 10; i++) {
-// //       createMarker(results[i]);
-// //     }
-// //   }
-// // };
-//
-// // function createMarker(place) {
-// //   var placeLoc = place.geometry.location;
-// //   var marker = new google.maps.Marker({
-// //     map: $scope.map,
-// //     position: place.geometry.location,
-// //     animation: google.maps.Animation.DROP,
-// //     icon: "img/tp1.png"
-// //   });
-// // }
-//
-//   //console.log(place);
-//   //console.log(place.name);
-//
-//   // will not work with the angular gmaps plugin
-//   // $scope.service = new google.maps.places.PlacesService($scope.map);
-//
-//   var createRandomMarker = function(i, bounds, idKey) {
-//
-//     if (idKey == null) {
-//       idKey = "id";
-//     }
-//
-//     var latitude = 42.3360077 + (Math.random() * 1);
-//     var longitude = -83.0508025 + (Math.random() * 1);
-//     var ret = {
-//       latitude: latitude,
-//       longitude: longitude,
-//       title: 'm' + i,
-//       icon: "img/tp1.png"
-//     };
-//
-//     ret[idKey] = i;
-//     return ret;
-//   };
-//
-//   var markers = [];
-//
-//   for (var i = 0; i < 10; i++) {
-//     markers.push(createRandomMarker(i, $scope.map.bounds))
-//   }
-//
-//   $scope.randomMarkers = markers;
-//
-// }
-//
-// initMap();
-//   uiGmapGoogleMapApi.then(function(maps) {
-//
-//
-//     });
 
 });
