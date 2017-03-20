@@ -2,9 +2,10 @@ var app = angular.module('privyMod');
 
 app.controller('addReviewController', function($scope, privyService, $http, $routeParams, $location) {
 
+
 $scope.placeDetails = "";
 $scope.url = "";
-    $scope.reviewList = [];
+$scope.reviewList = [];
 
     var Detroit = {lat: 42.3360077, lng: -83.0508025};
 
@@ -29,7 +30,7 @@ $scope.url = "";
       map.setCenter(center);
     });
 
-    $scope.url = $location.path().substr(16);
+    $scope.url = $location.path().substr(11);
     console.log($scope.url);
 
     service.getDetails({
@@ -119,10 +120,12 @@ geocodePlaceId(geocoder, map, infowindow);
 
     // $routeParams.placeId;
 
-    privyService.locationReviews($routeParams.placeId).then(function(data) {
-        $scope.locationReviewsArray = privyService.updateReviews();
-        console.log($scope.locationReviewsArray);
-
-    });
+    $scope.submitToReviews = function(review){
+        review.id = $routeParams.placeId;
+        // console.log(review);
+        privyService.addReview(review).then(function(){
+          $scope.reviewList = privyService.updateReviews();
+        });
+      };
 
 });

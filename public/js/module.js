@@ -49,7 +49,7 @@ app.config(function($routeProvider, $locationProvider){
      templateUrl: 'views/addreview.html'
   })
     .when('/addreview/:placeId', {
-     controller:'privyController',
+     controller:'addReviewController',
      templateUrl: 'views/addreview.html'
   })
   .when('/locationreview/:placeId', {
