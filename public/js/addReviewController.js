@@ -1,7 +1,6 @@
-
 var app = angular.module('privyMod');
 
-app.controller('locationReviewController', function($scope, privyService, $http, $routeParams, $location) {
+app.controller('addReviewController', function($scope, privyService, $http, $routeParams, $location) {
 
 $scope.placeDetails = "";
 $scope.url = "";
@@ -9,7 +8,7 @@ $scope.url = "";
 
     var Detroit = {lat: 42.3360077, lng: -83.0508025};
 
-    var map = new google.maps.Map(document.getElementById('locationMap'), {
+    var map = new google.maps.Map(document.getElementById('addReviewMap'), {
       center: Detroit,
       zoom: 15,
       scrollwheel: false

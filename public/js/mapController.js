@@ -44,7 +44,7 @@ if (navigator.geolocation) {
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: Detroit,
-          zoom: 13,
+          zoom: 15,
           scrollwheel: false
         });
 
@@ -123,7 +123,7 @@ $scope.distanceResponse = [];
         service.getDistanceMatrix({
           origins: origin,
           destinations: destinationCoordinates,
-          travelMode: 'DRIVING',
+          travelMode: 'WALKING',
           unitSystem: google.maps.UnitSystem.IMPERIAL,
           avoidHighways: false,
           avoidTolls: false
