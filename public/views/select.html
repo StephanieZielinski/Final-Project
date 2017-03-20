@@ -5,14 +5,22 @@
 
 <div id="map"> </div>
 
+
+
+  <!-- Distance: {{x[$index].elements[$index].distance.text}} Time: {{x[$index].elements[$index].duration.text}} -->
+
+
 <br>
-<div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:1">
-  
-    <p>{{result.name}}</p>
-    <p>{{result.vicinity}}</p>
-    <p>Open now: {{result.opening_hours.open_now}}</p>
+
+<div class="resultListing" ng-repeat="result in resultsDisplay  | limitTo:15:0">
+
+Distance: {{distanceMatrix.rows[0].elements[$index].distance.text}} Travel Time: {{distanceMatrix.rows[0].elements[$index].duration.text}}
+
+<p>{{result.name}}</p>
+<p>{{result.vicinity}}</p>
+<p>Open now: {{result.opening_hours.open_now}}</p>
 
 
-    <a ng-href="#/locationreview/{{result.id}}">View Review </a> &nbsp; <a href="#/addreview/{{result.id}}">Add Review </a> &nbsp; <a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
+<a ng-href="#/locationreview/{{result.place_id}}">View Reviews </a>	&nbsp;	<a href="#/addreview/{{result.place_id}}">Add Review </a>	&nbsp;	<a href="https://www.google.com/maps/dir//{{result.vicinity}}">Directions</a>
 
 </div>

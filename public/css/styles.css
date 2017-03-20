@@ -25,24 +25,20 @@ body {
 }
 
 .topper a {
-    display: inline;
-    font-size: 28pt;
-    /*color: #5A4F50;*/
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    margin: 28px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    /*text-shadow: 1px 1px #C1A78D;*/
-    letter-spacing: .75;
-    opacity: .85;
-    padding: 5px;
+  display: inline;
+  font-size: 24pt;
+  /*color: #5A4F50;*/
+  color: white;
+  text-decoration: none;
+  text-align: justify;
+  margin: 10px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  /*text-shadow: 1px 1px #C1A78D;*/
+  letter-spacing: .25;
+  opacity: .85;
+  padding: 1px;
 }
 
-
-/*.topper a:hover {
-  opacity: 1;
-}*/
 
 .view {
     background-color: white;
@@ -82,14 +78,15 @@ body {
     color: gold;
 }
 
-.locationReviewBox {
-    border: 1px solid black;
-    width: 50%;
-    margin-top: 2px;
-    /*background-color: lightgrey;*/
-    /*border-color: rgba(121, 201, 158, 1);*/
-    /*padding: 5 px;*/
-    /*margin-left: auto;
+/*.locationReviewBox{
+border: 1px solid black;
+width: 50%;
+margin-top: 2px;*/
+/*background-color: lightgrey;*/
+/*border-color: rgba(121, 201, 158, 1);*/
+/*padding: 5 px;*/
+/*margin-left: auto;
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda
 margin-right: auto;
 
 padding: 10px;
@@ -98,12 +95,23 @@ border-radius: 10px;
 border: 10px solid #87CEFA;*/
 }
 
-header {
+/*header {
+<<<<<<< HEAD
     height: 100px;
     width: 100%;
     background-color: rgba(197, 195, 198, 1);
     opacity: .85;
-}
+=======
+height: 50px;
+width: 100%;
+background-color: rgba(197, 195, 198, 1);
+opacity: .85;
+text-align: right;
+padding-right: 10px;
+font: black;
+
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda
+}*/
 
 nav {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -141,11 +149,20 @@ footer li {
 }
 
 .results {
+<<<<<<< HEAD
     color: rgb(69, 73, 70);
     text-align: left;
     font-family: 'Fira Sans Condensed', sans-serif;
     padding-left: 1.2%;
     background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
+=======
+  /*color: rgb(69, 73, 70);
+  text-align: left;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
+  padding-left: 1.2%;
+
+>>>>>>> 959ce1221fb2593770d8e0758997e1aafb22eeda*/
 }
 
 .results span {
@@ -170,7 +187,7 @@ footer li {
 }
 
 .resultsBlock:hover {
-  background: linear-gradient( rgba(20, 20, 20, .9), rgba(20, 20, 20, .9)), url(http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg) no-repeat center center fixed;
+  background: linear-gradient( rgba(20, 20, 20, .9), rgba(20, 20, 20, .9)), url('http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg') no-repeat center center fixed;
   color: rgb(200, 200, 196);
   font-size: 12pt;
   border-radius: 10px;
@@ -247,4 +264,48 @@ footer li {
   .resultsBlock {
     width: 95%;
   }
+}
+
+.one {
+  height: 130px;
+  width: 130px;
+  border: solid 2px white;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.two{
+  height: 130px;
+  width: 130px;
+  border: solid 2px white;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.three {
+  height: 130px;
+  width: 130px;
+  border: solid 2px white;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.four {
+  height: 130px;
+  width: 130px;
+  border: solid 2px white;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.five {
+  height: 130px;
+  width: 130px;
+  border: solid 2px white;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }

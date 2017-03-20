@@ -1,11 +1,23 @@
 <div privynav></div>
 <div class="page-header">
-  <h1>Location's Name<small>Reviews</small></h1>
+  <h1>{{locationReviewsArray[0].name}}<small>Reviews</small></h1>
 </div>
 <div class="results">
-    <h3>{{locationReviewsArray[0].name}}</h3>
+    <!-- <h3>{{locationReviewsArray[0].name}}</h3> -->
     <!-- add average rating for this location. review.rating(average) -->
     <p ng-if="review.type != null">{{review.type}}</p>
+
+
+<div ng-repeat="(detail, place) in placeDetails">
+  <p ng-if="detail === 'name'">{{place}}</p>
+  <p ng-if="detail == 'vicinity'">{{place}}</p>
+  <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
+</div>
+
+<div class="results">
+
+    <p ng-if="review.type != null">{{review.type}}</p>
+    <div id="locationMap"> </div>
 
         <span ng-repeat="review in locationReviewsArray">
             <div class="resultsBlock">

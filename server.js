@@ -58,13 +58,13 @@ app.post('/addreview', function(req, res, next){
    handicap: req.body.handicap,
    name: req.body.name,
    type: req.body.type,
-   googleid: req.body.id
+   place_id: req.body.id
  };
 
 console.log(review);
  pool.connect( function(err, client, done) {
 
-    var insertQuery = client.query('INSERT INTO privy(rating, comment, family, separate, neutral, single, handicap, name, type, googleid) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type, review.googleid]);
+    var insertQuery = client.query('INSERT INTO privy(rating, comment, family, separate, neutral, single, handicap, name, type, googleid) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [review.rating, review.comment, review.family, review.separate, review.neutral, review.single, review.handicap, review.name, review.type, review.place_id]);
     insertQuery.on('end', function() {
       var query = client.query('SELECT * FROM privy ORDER BY googleid');
 

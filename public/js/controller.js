@@ -20,6 +20,7 @@ $scope.review = {};
 
 
 
+
   console.log($routeParams.placeId);
   console.log($routeParams.type);
   // $scope.filter = {
