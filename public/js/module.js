@@ -1,7 +1,5 @@
 var app = angular.module('privyMod', ['ngRoute']);
 
-
-
 app.directive('privynav', function(){
   return {
     restrict: 'EA',
