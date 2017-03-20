@@ -69,29 +69,54 @@ body {
 	margin: auto;
 }
 
-/*star rating styling*/
-/*.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: center;
+/*Star Rating CSS*/
+..txt-center {
+    text-align: center;
 }
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
+.hide {
+    display: none;
 }
-.rating > span:hover,
-.rating > span:hover ~ span {
-  color: transparent;
+
+.clear {
+    float: none;
+    clear: both;
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0;
-   fill: red;
-   color: gold;
-}*/
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
 
 .locationReviewBox{
 border: 1px solid black;
