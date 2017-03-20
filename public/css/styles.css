@@ -77,6 +77,64 @@ body {
     fill: red;
     color: gold;
 }
+/*=======
+	padding: 10px;
+	background-color: #C1DBC0;
+  border-radius: 10px;
+	border: 15px solid #87CEFA;
+	width: 50%;
+	text-align: center;
+	margin: auto;
+}*/
+
+/*Star Rating CSS*/
+..txt-center {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
 
 /*.locationReviewBox{
 border: 1px solid black;
@@ -149,13 +207,11 @@ footer li {
 }
 
 .results {
-<<<<<<< HEAD
     color: rgb(69, 73, 70);
     text-align: left;
     font-family: 'Fira Sans Condensed', sans-serif;
     padding-left: 1.2%;
     background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0226/7439/rrrrrsubway_tile_-_white_shop_preview.png');
-=======
   /*color: rgb(69, 73, 70);
   text-align: left;
   font-family: 'Fira Sans Condensed', sans-serif;

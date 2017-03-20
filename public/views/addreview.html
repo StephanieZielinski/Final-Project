@@ -4,17 +4,26 @@
 </div>
 
 
-<div class="rating">
+<!-- <div class="rating"> -->
 
 <form>
 
   <h3>Bathroom Rating</h3>
+  <div class="rating">
+            <input id="star5" name="star" type="radio" ng-value="5" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star5">☆</label>
+            <input id="star4" name="star" type="radio" ng-value="4" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star4">☆</label>
+            <input id="star3" name="star" type="radio" ng-value="3" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star3">☆</label>
+            <input id="star2" name="star" type="radio" ng-value="2" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star2">☆</label>
+            <input id="star1" name="star" type="radio" ng-value="1" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star1">☆</label>
+            <div class="clear"></div>
+  </div>
 
-  <input type="radio" name="rating" ng-value="1" ng-model="review.rating">One<br>
-  <input type="radio" name="rating" ng-value="2" ng-model="review.rating">Two<br>
-  <input type="radio" name="rating" ng-value="3" ng-model="review.rating">Three<br>
-  <input type="radio" name="rating" ng-value="4" ng-model="review.rating">Four<br>
-  <input type="radio" name="rating" ng-value="5" ng-model="review.rating">Five<br>
+
 
   <h3>Public or Business</h3>
   <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type" id="business">
