@@ -2,8 +2,10 @@
     padding-bottom: 100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55)), url('http://www.enviro-master.com/wp-content/uploads/2016/07/bathroom-stalls.jpg') no-repeat center center fixed;
+    background: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5795305ae4fcb5084392d6f2/1469395062902/IMG_6804.jpg?format=1000w') no-repeat center center fixed;
+    background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));
 }
+
 
 
 body {
@@ -14,8 +16,8 @@ body {
 
 .homeLogo {
     margin-bottom: -200px;
-    margin-top: -100px;
-    opacity: .5;
+    margin-top: 100px;
+    opacity: .8;
 }
 
 .addReviewLogo {
@@ -28,13 +30,11 @@ body {
 .topper a {
   display: inline;
   font-size: 24pt;
-  /*color: #5A4F50;*/
   color: white;
   text-decoration: none;
   text-align: justify;
   margin: 10px;
   font-family: 'Fira Sans Condensed', sans-serif;
-  /*text-shadow: 1px 1px #C1A78D;*/
   letter-spacing: .25;
   opacity: .85;
   padding: 1px;
@@ -52,7 +52,7 @@ body {
     width: 85%;
     text-align: left;
     margin: auto;
-    color: white;
+    color: #383838;
 }
 
 
@@ -131,13 +131,6 @@ h4 {
 
 }
 
-footer li {
-    display: inline;
-    text-decoration: none;
-    margin-left: 35px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-size: 20pt;
-}
 
 .pagination li a {
   color: rgba(197, 195, 198, .85);
