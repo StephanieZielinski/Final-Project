@@ -32,6 +32,8 @@ var results = [];
  pool.connect( function(err, client, done) {
    var id = req.params.id;
 
+
+    //SELECT AVG (rating) FROM  privy WHERE googleid =($1), [id]);
    var query = client.query("SELECT * FROM privy WHERE googleid=($1)",[id]);
       query.on('row', function(row){
      results.push(row);
