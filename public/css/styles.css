@@ -1,12 +1,12 @@
 
 #homePage {
-    padding-bottom: 100%;
+    padding-bottom: 50px;
     width: 100%;
     height: 100%;
     background: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5795305ae4fcb5084392d6f2/1469395062902/IMG_6804.jpg?format=1000w') no-repeat center center fixed;
     /*background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));*/
     background-color: black;
-    margin-top: -350px;
+    margin-top: -470px;
 }
 
 .view {
@@ -297,7 +297,6 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
     background-image: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5850c0d0e3df2866f9ea2ed4/1481687275983/IMG_6249.jpg?format=1000w');
     background-position: center;
   }
-
   #navPrivyIcon {
     padding-top: 13px;
     padding-bottom: 5px;
@@ -305,6 +304,10 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
 
   .topper a {
     font-size: 32pt;
+  }
+  #homePage {
+    padding-bottom: 100%;
+    background-size: cover;
   }
 
 }
