@@ -17,7 +17,7 @@ $scope.reviewList = [];
     var service = new google.maps.places.PlacesService(map);
     var geocoder = new google.maps.Geocoder;
     var infowindow = new google.maps.InfoWindow;
-
+    console.log(map);
 
     var center;
     function calculateCenter() {
@@ -122,7 +122,7 @@ geocodePlaceId(geocoder, map, infowindow);
 
     $scope.submitToReviews = function(review){
         review.id = $routeParams.placeId;
-        // console.log(review);
+        console.log(review);
         privyService.addReview(review).then(function(){
           $scope.reviewList = privyService.updateReviews();
         });

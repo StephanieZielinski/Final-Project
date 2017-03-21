@@ -6,14 +6,21 @@
 
 <div id="container" class="results">
 
-    <!-- <div class="rating"> -->
-    <div ng-repeat="(detail, place) in placeDetails">
-        <p ng-if="detail === 'name'">{{place}}</p>
-        <p ng-if="detail == 'vicinity'">{{place}}</p>
-        <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
-    </div>
 
-    <div id="addReviewMap"> </div>
+<!-- <div class="rating"> -->
+<div id="addReviewMap"> </div>
+
+<div ng-repeat="(detail, place) in placeDetails">
+  <p ng-if="detail === 'name'">{{place}}</p>
+  <p ng-if="detail == 'vicinity'">{{place}}</p>
+  <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
+</div>
+
+<form>
+<h3>Name:</h3>
+<input type="text" size="40" name="location name text" ng-value="placeDetails.name" ng-model="review.name = placeDetails.name" readonly><br>
+<h3>Location:</h3>
+<input type="text" size="40" name="location name text" ng-value="placeDetails.vicinity" readonly><br>
 
 
     <form>

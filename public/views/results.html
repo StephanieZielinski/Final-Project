@@ -4,9 +4,11 @@
 <div privynav class="stickyNav"></div>
 
 <div class="results">
+  <div id="allReviewsMap"> </div>
 
     <span ng-repeat="review in reviewList | filter:search">
           <div class="resultsBlock">
+
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>
                 <!-- <div class="pull-right">

@@ -11,7 +11,7 @@
 <div class="results">
 
     <span ng-repeat="result in resultsDisplay  | limitTo:15:0">
-      <div class="resultsBlock">
+      <div class="resultsBlock selectResults">
         <h4>Distance: {{distanceMatrix.rows[0].elements[$index].distance.text}} Travel Time: {{distanceMatrix.rows[0].elements[$index].duration.text}} </h4>
 
         <p>{{result.name}}</p>

@@ -10,6 +10,7 @@
     background: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5795305ae4fcb5084392d6f2/1469395062902/IMG_6804.jpg?format=1000w') no-repeat center center fixed;
     /*background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));*/
     background-color: black;
+    padding-top: -350px;
 }
 
 
@@ -34,7 +35,7 @@ body {
 
 .topper a {
   display: inline;
-  font-size: 24pt;
+  font-size: 36pt;
   color: white;
   text-decoration: none;
   text-align: justify;
@@ -283,7 +284,7 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
     margin-left: 44%;
   }
   .navbar-default {
-    position: absolute;
+    position: relative;
     z-index: 10;
   }
   .resultsBlock {
@@ -299,6 +300,10 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
     padding-bottom: 5px;
   }
 
+  .topper a {
+    font-size: 32pt;
+  }
+
 }
 
 .detroit {
@@ -306,4 +311,8 @@ font-family: 'Yatra One', cursive;
 color: white;
 text-align: center;
 size: 90px;
+}
+
+.selectResults {
+  height: 150px;
 }

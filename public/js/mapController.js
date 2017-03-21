@@ -9,7 +9,7 @@ $scope.distanceMatrix = {};
     $scope.url = $location.path();
     console.log($scope.url);
 
-//TRY GEOLOCATION
+//TRY GEOLOCATION SET CENTER TO GEOLOCATION
 if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             $scope.pos = {
@@ -105,7 +105,7 @@ console.log($scope.pos);
         var marker = new google.maps.Marker({
           map: map,
           position: place.geometry.location,
-          icon: "img/tp1.png",
+          icon: "img/toilet_box1.png",
           animation: google.maps.Animation.DROP
 
         });
@@ -195,6 +195,8 @@ destination.push($scope.resultsDisplay[j].vicinity);
         var marker = new google.maps.Marker({
           map: map,
           position: place.geometry.location,
+          icon: "img/flag.png",
+
       //    icon: "img/tp1.png",
           animation: google.maps.Animation.BOUNCE
 

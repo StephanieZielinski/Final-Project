@@ -26,7 +26,7 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'views/locationreview.html'
   })
   .when('/results', {
-    controller: 'privyController',
+    controller: 'allReviewController',
     templateUrl: 'views/results.html'
   })
   .when('/results/:type', {

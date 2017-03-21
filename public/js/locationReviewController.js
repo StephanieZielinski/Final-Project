@@ -1,4 +1,3 @@
-
 var app = angular.module('privyMod');
 
 app.controller('locationReviewController', function($scope, privyService, $http, $routeParams, $location) {
@@ -18,6 +17,7 @@ $scope.url = "";
     var geocoder = new google.maps.Geocoder;
     var infowindow = new google.maps.InfoWindow;
 
+//CALCULATE CENTER AND MOVE TO LOCATION MARKER
 
     var center;
     function calculateCenter() {
@@ -45,13 +45,12 @@ $scope.url = "";
               var marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location,
-                icon: "img/tp1.png",
+                icon: "img/toilet_box1.png",
                 animation: google.maps.Animation.DROP
               });
               google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
-
-                infowindow.open(map, this);
+              infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
+              infowindow.open(map, this);
               });
             }
 $scope.latLng = place.geometry.location;
@@ -102,27 +101,21 @@ geocodePlaceId(geocoder, map, infowindow);
 
 }
 
-// $scope.url = $location.path().substr(16);
-// console.log($scope.url);
 
-    var marker = new google.maps.Marker({
-        //  position: {lat: 42.3360077, lng: -83.0508025},
-        placeId: $scope.url,
-          map: map,
-          title: 'Hello World!'
-        });
 
-            // marker.setPlace({
-            //             placeId: $scope.url
-            //             //location: place.geometry.location
-            //           });
-            //           marker.setVisible(true);
-
-    // $routeParams.placeId;
+    privyService.getReviews().then(function(){
+      $scope.reviewList = privyService.updateReviews();
+    });
 
     privyService.locationReviews($routeParams.placeId).then(function(data) {
         $scope.locationReviewsArray = privyService.updateReviews();
         console.log($scope.locationReviewsArray);
+        var avg = 0;
+        for (var x = 0; x < $scope.locationReviewsArray.length; x++){
+       avg += $scope.locationReviewsArray[x].rating;
+           $scope.averageRating = avg / $scope.locationReviewsArray.length;
+
+      }
 
     });
 

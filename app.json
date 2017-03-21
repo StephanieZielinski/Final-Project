@@ -1,0 +1,5 @@
+{
+ "name": "project-privy",
+ "description": "App for providing nearby toilet reviews and locations",
+ "image": "heroku/nodejs"
+}
