@@ -1,4 +1,4 @@
-html, body, #map_canvas {
+#map_canvas {
     height: 100%;
     width: 100%;
     font-family: helvetica, arial;

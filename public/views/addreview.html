@@ -1,64 +1,64 @@
 <div class="page-header">
-  <h1><span>Add Your Review</span></h1>
+    <h1><span>Add Your Review</span></h1>
 </div>
 <div privynav class="stickyNav"></div>
 
 
 <div id="container" class="results">
 
-<!-- <div class="rating"> -->
-<div ng-repeat="(detail, place) in placeDetails">
-  <p ng-if="detail === 'name'">{{place}}</p>
-  <p ng-if="detail == 'vicinity'">{{place}}</p>
-  <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
-</div>
+    <!-- <div class="rating"> -->
+    <div ng-repeat="(detail, place) in placeDetails">
+        <p ng-if="detail === 'name'">{{place}}</p>
+        <p ng-if="detail == 'vicinity'">{{place}}</p>
+        <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
+    </div>
 
-<div id="addReviewMap"> </div>
-
-
-<form>
-  <h3>Bathroom Rating</h3>
-  <div class="rating">
-    <input id="star5" name="star" type="radio" ng-value="5" ng-model="review.rating" class="radio-btn hide" />
-    <label for="star5">☆</label>
-    <input id="star4" name="star" type="radio" ng-value="4" ng-model="review.rating" class="radio-btn hide" />
-    <label for="star4">☆</label>
-    <input id="star3" name="star" type="radio" ng-value="3" ng-model="review.rating" class="radio-btn hide" />
-    <label for="star3">☆</label>
-    <input id="star2" name="star" type="radio" ng-value="2" ng-model="review.rating" class="radio-btn hide" />
-    <label for="star2">☆</label>
-    <input id="star1" name="star" type="radio" ng-value="1" ng-model="review.rating" class="radio-btn hide" />
-    <label for="star1">☆</label>
-    <div class="clear"></div>
-  </div>
+    <div id="addReviewMap"> </div>
 
 
-
-  <h3>Public or Business</h3>
-  <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type" id="business">
-  <label for="business"> Business</label></br>
-  <input type="radio" name="Type of Bathroom" value="Public" ng-model="review.type" id="public">
-  <label for="public"> Public </label></br>
-
-
-  <h3>Type of Bathroom</h3>
-  <input type="checkbox" name="Type of Bathroom" ng-value="separate" ng-model="review.separate" id="genderseparate">
-  <label for="genderseparate">Gender Separate</label><br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral" id="genderneutral">
-  <label for="genderneutral">Transgender</label><br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap" id="handicapCheckbox">
-  <label for="handicapCheckbox">Handicap</label><br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family" id="familyCheckbox">
-  <label for="familyCheckbox">Family Friendly</label><br>
-  <input type="checkbox" name="Type of Bathroom" ng-value="single-stall" ng-model="review.single" id="singleCheckbox">
-  <label for="singleCheckbox">Single Stall</label><br>
-
-  <h3>Comments</h3>
-  <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
+    <form>
+        <h3>Bathroom Rating</h3>
+        <div class="rating">
+            <input id="star5" name="star" type="radio" ng-value="5" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star5">☆</label>
+            <input id="star4" name="star" type="radio" ng-value="4" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star4">☆</label>
+            <input id="star3" name="star" type="radio" ng-value="3" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star3">☆</label>
+            <input id="star2" name="star" type="radio" ng-value="2" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star2">☆</label>
+            <input id="star1" name="star" type="radio" ng-value="1" ng-model="review.rating" class="radio-btn hide" />
+            <label for="star1">☆</label>
+            <div class="clear"></div>
+        </div>
 
 
-  <a href="#/thankyou"><button type="button" ng-click="submitToReviews(review)">Submit Review</button></a>
 
-</form>
+        <h3>Public or Business</h3>
+        <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type" id="business">
+        <label for="business"> Business</label></br>
+        <input type="radio" name="Type of Bathroom" value="Public" ng-model="review.type" id="public">
+        <label for="public"> Public </label></br>
+
+
+        <h3>Type of Bathroom</h3>
+        <input type="checkbox" name="Type of Bathroom" ng-value="separate" ng-model="review.separate" id="genderseparate">
+        <label for="genderseparate">Gender Separate</label><br>
+        <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral" id="genderneutral">
+        <label for="genderneutral">Transgender</label><br>
+        <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap" id="handicapCheckbox">
+        <label for="handicapCheckbox">Handicap</label><br>
+        <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family" id="familyCheckbox">
+        <label for="familyCheckbox">Family Friendly</label><br>
+        <input type="checkbox" name="Type of Bathroom" ng-value="single-stall" ng-model="review.single" id="singleCheckbox">
+        <label for="singleCheckbox">Single Stall</label><br>
+
+        <h3>Comments</h3>
+        <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
+
+
+        <a href="#/thankyou"><button type="button" ng-click="submitToReviews(review)">Submit Review</button></a>
+
+    </form>
 
 </div>
