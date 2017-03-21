@@ -51,7 +51,4 @@ app.factory('privyService', function($http) {
     return promise;
   };
 
-}
-
-
 });
