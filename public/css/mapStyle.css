@@ -1,12 +1,13 @@
-html, body, #map_canvas {
+#map_canvas {
     height: 100%;
     width: 100%;
     font-family: helvetica, arial;
 }
 
+/*
 #map_canvas {
     position: relative;
-}
+}*/
 
 h2{
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -36,7 +37,7 @@ h2{
 }
 
 #locationMap{
-  height: 200px;
+  height: 250px;
   width: 100%;
 }
 

@@ -15,8 +15,11 @@
   <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
 </div>
 
-
-
+<form>
+<h3>Name:</h3>
+<input type="text" size="40" name="location name text" ng-value="placeDetails.name" ng-model="review.name = placeDetails.name" readonly><br>
+<h3>Location:</h3>
+<input type="text" size="40" name="location name text" ng-value="placeDetails.vicinity" readonly><br>
 
 <form>
   <h3>Bathroom Rating</h3>

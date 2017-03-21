@@ -7,12 +7,14 @@
     <!-- add average rating for this location. review.rating(average) -->
     <p ng-if="review.type != null">{{review.type}}</p>
 
-
 <div ng-repeat="(detail, place) in placeDetails">
   <p ng-if="detail === 'name'">{{place}}</p>
+
   <p ng-if="detail == 'vicinity'">{{place}}</p>
   <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
 </div>
+Average Rating: {{averageRating}}
+
 
 <div class="results">
 
@@ -21,7 +23,7 @@
 
         <span ng-repeat="review in locationReviewsArray">
             <div class="resultsBlock">
-                <h4>Name: {{review.name}}</h4>
+                <h5>Name: {{review.name}}</h5>
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
                 <li ng-if="review.family === true">Family Friendly</li>

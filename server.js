@@ -4,6 +4,8 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var password = require('./password.js');
 
+var poolCount = 0;
+var connectCount = 0;
 
 var connectionString = 'postgres://opxeceunrpgebk:'+password+'@ec2-54-83-25-217.compute-1.amazonaws.com:5432/d4v5g9dp5h91jc?ssl=true';
 console.log(connectionString);
@@ -109,6 +111,20 @@ app.get('/results', function(req, res, next){
 
 });
 
+var acquireCount = 0
+pool.on('acquire', function (client) {
+  acquireCount++
+})
+
+var connectCount = 0
+pool.on('connect', function () {
+  connectCount++
+})
+
+setTimeout(function () {
+  console.log('connect count:', connectCount) // output: connect count: 10
+  console.log('acquire count:', acquireCount) // output: acquire count: 200
+}, 10000)
 
 
 

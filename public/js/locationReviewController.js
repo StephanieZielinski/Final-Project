@@ -49,9 +49,8 @@ $scope.url = "";
                 animation: google.maps.Animation.DROP
               });
               google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
-
-                infowindow.open(map, this);
+              infowindow.setContent("<a href=''>" + place.name + "</a>" + '<br>' + place.vicinity + '<br>' + 'Rating: ' + place.rating + '<br>' + '<a href="#/locationreview/' + place.place_id +'"' + '>View Reviews </a>' + '&nbsp;' + '<a href="#/addreview/' + place.place_id +'"' + '>Add Review </a>' + '&nbsp;' +  "<a href='https://www.google.com/maps/dir//" + place.vicinity + "''>" + "Directions" + "</a>");
+              infowindow.open(map, this);
               });
             }
 $scope.latLng = place.geometry.location;
@@ -102,23 +101,7 @@ geocodePlaceId(geocoder, map, infowindow);
 
 }
 
-// $scope.url = $location.path().substr(16);
-// console.log($scope.url);
 
-    var marker = new google.maps.Marker({
-        //  position: {lat: 42.3360077, lng: -83.0508025},
-        placeId: $scope.url,
-          map: map,
-          title: 'Hello World!'
-        });
-
-            // marker.setPlace({
-            //             placeId: $scope.url
-            //             //location: place.geometry.location
-            //           });
-            //           marker.setVisible(true);
-
-    // $routeParams.placeId;
 
     privyService.getReviews().then(function(){
       $scope.reviewList = privyService.updateReviews();
@@ -127,6 +110,12 @@ geocodePlaceId(geocoder, map, infowindow);
     privyService.locationReviews($routeParams.placeId).then(function(data) {
         $scope.locationReviewsArray = privyService.updateReviews();
         console.log($scope.locationReviewsArray);
+        var avg = 0;
+        for (var x = 0; x < $scope.locationReviewsArray.length; x++){
+       avg += $scope.locationReviewsArray[x].rating;
+           $scope.averageRating = avg / $scope.locationReviewsArray.length;
+
+      }
 
     });
 
