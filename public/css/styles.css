@@ -1,7 +1,3 @@
-.view {
-    background-color: white;
-    padding-top: 350px;
-}
 
 #homePage {
     padding-bottom: 100%;
@@ -10,9 +6,13 @@
     background: url('https://static1.squarespace.com/static/56babdc22eeb81df69a5e685/57952fc9e6f2e155ae93f120/5795305ae4fcb5084392d6f2/1469395062902/IMG_6804.jpg?format=1000w') no-repeat center center fixed;
     /*background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));*/
     background-color: black;
-    padding-top: -350px;
+    margin-top: -350px;
 }
 
+.view {
+    background-color: white;
+    padding-top: 350px;
+}
 
 body {
     text-align: center;
