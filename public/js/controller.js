@@ -19,13 +19,15 @@ $scope.review = {};
     };
 
 
+// STICKY NAV FUNCTION
+var stickyNav = document.getElementsByClassName('stickyNav');
 
-
-  console.log($routeParams.placeId);
-  console.log($routeParams.type);
-  // $scope.filter = {
-  //   family: $routeParams.family,
-  //
-  // }
+  $(window).scroll(function() {
+    if( $(this).scrollTop()>352) {
+      stickyNav[0].className = "navbar-default-scrolled stickyNav";
+    } else {
+      stickyNav[0].className = "navbar-default stickyNav";
+    }
+  });
 
 });
