@@ -17,6 +17,7 @@ $scope.url = "";
     var geocoder = new google.maps.Geocoder;
     var infowindow = new google.maps.InfoWindow;
 
+//CALCULATE CENTER AND MOVE TO LOCATION MARKER
 
     var center;
     function calculateCenter() {

@@ -9,7 +9,7 @@ $scope.distanceMatrix = {};
     $scope.url = $location.path();
     console.log($scope.url);
 
-//TRY GEOLOCATION
+//TRY GEOLOCATION SET CENTER TO GEOLOCATION
 if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             $scope.pos = {

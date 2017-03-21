@@ -21,6 +21,7 @@
 
         <span ng-repeat="review in locationReviewsArray">
             <div class="resultsBlock">
+                <h4>Name: {{review.name}}</h4>
                 <h5>Rating: {{review.rating}}</h5>
                 <p>Comment: {{review.comment}}</p>
                 <li ng-if="review.family === true">Family Friendly</li>
