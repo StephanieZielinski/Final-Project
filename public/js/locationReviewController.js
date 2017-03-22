@@ -113,7 +113,7 @@ geocodePlaceId(geocoder, map, infowindow);
         var avg = 0;
         for (var x = 0; x < $scope.locationReviewsArray.length; x++){
        avg += $scope.locationReviewsArray[x].rating;
-           $scope.averageRating = avg / $scope.locationReviewsArray.length;
+           $scope.averageRating = Math.round(avg / $scope.locationReviewsArray.length);
 
       }
 

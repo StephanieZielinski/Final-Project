@@ -10,12 +10,12 @@
     <p ng-if="review.type != null">{{review.type}}</p>
 
 <div ng-repeat="(detail, place) in placeDetails">
-  <p ng-if="detail === 'name'">{{place}}</p>
+  <h3 ng-if="detail === 'name'">{{place}}</h3>
 
   <p ng-if="detail == 'vicinity'">{{place}}</p>
   <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
 </div>
-Average Rating: {{averageRating}}
+<h3>Average Rating: {{averageRating}}</h3>
 
 
 <div class="results">
@@ -33,7 +33,6 @@ Average Rating: {{averageRating}}
                 <li ng-if="review.separate != null">Gender Separate</li>
                 <li ng-if="review.neutral != null">Transgender Friendly</li>
                 <li ng-if="review.single != null">Single Stall</li> <br>
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
           </div>
         </span>
 </div>
