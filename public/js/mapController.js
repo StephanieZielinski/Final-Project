@@ -93,7 +93,7 @@ app.controller('mapController', function($scope, privyService, $http, $location)
 
             //Loop for Google Places Markers
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 1; i < 15; i++) {
+                for (var i = 1; i < results.length; i++) {
                     createMarker(results[i]);
                 }
             }
@@ -158,7 +158,7 @@ app.controller('mapController', function($scope, privyService, $http, $location)
             // set place details object to scope
 
             var destination = [];
-            for (var j = 0; j < 15; j++) {
+            for (var j = 0; j < $scope.resultsDisplay.length; j++) {
                 destination.push($scope.resultsDisplay[j].vicinity);
                 $scope.distanceResponse.push(getDistance(destination));
                 // console.log($scope.distanceResponse);
