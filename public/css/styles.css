@@ -329,10 +329,11 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
 }
 
 .detroit {
-font-family: 'Yatra One', cursive;
-color: white;
-text-align: center;
-size: 90px;
+  color: rgb(195, 192, 188);
+  font-family: 'Yatra One', cursive;
+  color: white;
+  text-align: center;
+  size: 90px;
 }
 
 .selectResults {
