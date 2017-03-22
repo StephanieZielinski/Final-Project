@@ -89,7 +89,7 @@ console.log($scope.pos);
 
 //Loop for Google Places Markers
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 1; i < 15 ; i++) {
+          for (var i = 1; i < 10 ; i++) {
             createMarker(results[i]);
           }
         }
@@ -128,11 +128,11 @@ $scope.distanceResponse = [];
           avoidHighways: false,
           avoidTolls: false
         }, function(response, status) {
-          if (status !== 'OK') {
-            alert('Error was: ' + status);
-          } else {
-            var originList = response.originAddresses;
-            var destinationList = response.destinationAddresses;
+          // if (status !== 'OK') {
+          //   alert('Error was: ' + status);
+          // } else {
+           var originList = response.originAddresses;
+          var destinationList = response.destinationAddresses;
     //      $scope.distanceCalc = response.rows[0].elements[0].distance.text;
 console.log(response);
 $scope.distanceMatrix = response;
@@ -142,7 +142,7 @@ console.log($scope.distanceMatrix);
 
 return response;
 
-            };
+            // };
 
             //return response;
 
@@ -153,7 +153,7 @@ return response;
 // set place details object to scope
 
 var destination = [];
-for (var j = 0; j < 15;j++){
+for (var j = 0; j < 10;j++){
 destination.push($scope.resultsDisplay[j].vicinity);
  $scope.distanceResponse.push(getDistance(destination));
 // console.log($scope.distanceResponse);

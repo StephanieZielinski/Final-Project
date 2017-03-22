@@ -106,14 +106,14 @@ geocodePlaceId(geocoder, map, infowindow);
     privyService.getReviews().then(function(){
       $scope.reviewList = privyService.updateReviews();
     });
-
+ // average rating for reviews
     privyService.locationReviews($routeParams.placeId).then(function(data) {
         $scope.locationReviewsArray = privyService.updateReviews();
         console.log($scope.locationReviewsArray);
         var avg = 0;
         for (var x = 0; x < $scope.locationReviewsArray.length; x++){
        avg += $scope.locationReviewsArray[x].rating;
-           $scope.averageRating = avg / $scope.locationReviewsArray.length;
+           $scope.averageRating = Math.round(avg / $scope.locationReviewsArray.length);
 
       }
 
