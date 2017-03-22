@@ -319,11 +319,10 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
   #homePage {
     padding-bottom: 100%;
     background-size: cover;
-    width: 768px;
   }
   .homeLogo{
-    width: 38%;
-    margin-bottom: -110px;
+    width: 57%;
+    margin-bottom: -100px;
     margin-top: 300px;
   }
 
