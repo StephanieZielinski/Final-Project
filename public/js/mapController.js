@@ -24,11 +24,11 @@ app.controller('mapController', function($scope, privyService, $http, $location)
                 searchNearby();
 
             }, function() {
-                handleLocationError(true, infoWindow, map.getCenter());
+                handleLocationError(true, infowindow, map.getCenter());
             });
         }
 
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        function handleLocationError(browserHasGeolocation, infowindow, pos) {
             infowindow.setPosition($scope.pos);
             infowindow.setContent(browserHasGeolocation ?
                 'Error: The Geolocation service failed.' :
