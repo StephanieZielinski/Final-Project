@@ -7,15 +7,17 @@
     /*background linear-gradient: ( rgba(20, 20, 20, .55), rgba(20, 20, 20, .55));*/
     background-color: black;
     margin-top: -470px;
+    background-size: cover;
+    padding-bottom: 215px;
 }
 
 .twitter {
-height: 40%;
-width: 40%;
-border: solid 2px black;
-align-items: center;
-padding: 20px;
-margin-left: 10%;
+  height: 40%;
+  width: 40%;
+  border: solid 2px black;
+  align-items: center;
+  padding: 20px;
+  margin-left: 10%;
 }
 
 .view {
