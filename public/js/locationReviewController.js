@@ -102,7 +102,7 @@ geocodePlaceId(geocoder, map, infowindow);
 }
 
 
-
+//calculates the average rating of the location
     privyService.getReviews().then(function(){
       $scope.reviewList = privyService.updateReviews();
     });

@@ -10,6 +10,7 @@
                 <h3>{{review.name}}</h3>
                 <p ng-if="review.type != null">{{review.type}}</p>
                 <h5>Rating: {{review.rating}}</h5>
+                <p>Comment: {{review.comment}}</p>
 
                 <li ng-if="review.family === true">Family Friendly</li>
                 <li ng-if="review.handicap === true">Handicap Accessible</li>

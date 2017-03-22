@@ -22,7 +22,6 @@ $scope.titleTest = "REVIEW LOCATION TITLE";
 
 // STICKY NAV FUNCTION
 var stickyNav = document.getElementsByClassName('stickyNav');
-
   $(window).scroll(function() {
     if( $(this).scrollTop()>352) {
       stickyNav[0].className = "navbar-default-scrolled stickyNav";
