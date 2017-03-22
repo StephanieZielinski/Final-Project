@@ -106,7 +106,7 @@ geocodePlaceId(geocoder, map, infowindow);
     privyService.getReviews().then(function(){
       $scope.reviewList = privyService.updateReviews();
     });
-
+ // average rating for reviews
     privyService.locationReviews($routeParams.placeId).then(function(data) {
         $scope.locationReviewsArray = privyService.updateReviews();
         console.log($scope.locationReviewsArray);
