@@ -136,7 +136,7 @@ app.controller('mapController', function($scope, privyService, $http, $location)
                     // if (status !== 'OK') {
                     //     alert('Error was: ' + status);
                     // } else {
-                        var originList = response.originAddresses;
+                        // var originList = response.originAddresses;
                         var destinationList = response.destinationAddresses;
                         //      $scope.distanceCalc = response.rows[0].elements[0].distance.text;
                         console.log(response);
