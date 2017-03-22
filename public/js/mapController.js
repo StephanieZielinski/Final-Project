@@ -137,7 +137,7 @@ app.controller('mapController', function($scope, privyService, $http, $location)
                     //     alert('Error was: ' + status);
                     // } else {
                         // var originList = response.originAddresses;
-                        var destinationList = response.destinationAddresses;
+                        // var destinationList = response.destinationAddresses;
                         //      $scope.distanceCalc = response.rows[0].elements[0].distance.text;
                         console.log(response);
                         $scope.distanceMatrix = response;
