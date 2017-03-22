@@ -9,6 +9,15 @@
     margin-top: -470px;
 }
 
+.twitter {
+height: 80%;
+width: 80%;
+border: solid 2px black;
+align-items: center;
+padding: 20px;
+margin-left: 100px;
+}
+
 .view {
     background-color: white;
     padding-top: 350px;
