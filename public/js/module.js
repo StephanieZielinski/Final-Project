@@ -1,5 +1,6 @@
 var app = angular.module('privyMod', ['ngRoute']);
 
+//customer directive for navbar
 app.directive('privynav', function(){
   return {
     restrict: 'EA',
@@ -9,7 +10,7 @@ app.directive('privynav', function(){
 });
 
 
-
+//routing to different views
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
 

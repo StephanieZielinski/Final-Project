@@ -292,7 +292,7 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
   .navbar-default .navButton{
-    margin-left: 40%;
+    width: 100%;
   }
   .navbar-default {
     position: relative;
