@@ -13,7 +13,7 @@
 
 .twitter {
   height: 40%;
-  width: 40%;
+  width: 78%;
   border: solid 2px black;
   align-items: center;
   padding: 20px;
@@ -322,7 +322,7 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
   }
   .homeLogo{
     width: 57%;
-    margin-bottom: -100px;
+    margin-bottom: -85px;
     margin-top: 300px;
   }
 
