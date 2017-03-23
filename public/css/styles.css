@@ -339,3 +339,12 @@ background: linear-gradient( rgba(214, 211, 211, 0.95), rgba(20, 20, 20, .0)),ur
 .selectResults {
   height: 150px;
 }
+
+form span, .addReviewFormInfo span {
+  color: white;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  letter-spacing: .3;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.5px;
+  margin-left: 0.2%;
+}

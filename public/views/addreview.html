@@ -10,21 +10,21 @@
 <!-- <div class="rating"> -->
 <div id="addReviewMap"> </div>
 
-<div ng-repeat="(detail, place) in placeDetails">
-  <p ng-if="detail === 'name'">{{place}}</p>
-  <p ng-if="detail == 'vicinity'">{{place}}</p>
-  <p ng-if="detail == 'opening_hours'">Open now: {{place.open_now}}</p>
+<div ng-repeat="(detail, place) in placeDetails" class="addReviewFormInfo">
+  <p ng-if="detail === 'name'"><span>{{place}}</span></p>
+  <p ng-if="detail == 'vicinity'"><span>{{place}}</span></p>
+  <p ng-if="detail == 'opening_hours'"><span>Open now: {{place.open_now}}</span></p>
 </div>
 
 <form>
-<h3>Name:</h3>
+<h3><span>Name:</span></h3>
 <input type="text" size="40" name="location name text" ng-value="placeDetails.name" ng-model="review.name = placeDetails.name" readonly><br>
-<h3>Location:</h3>
+<h3><span>Location:</span></h3>
 <input type="text" size="40" name="location name text" ng-value="placeDetails.vicinity" readonly><br>
 
 
     <form>
-        <h3>Bathroom Rating</h3>
+        <h3><span>Bathroom Rating</span></h3>
         <div class="rating">
             <input id="star5" name="star" type="radio" ng-value="5" ng-model="review.rating" class="radio-btn hide" />
             <label for="star5">☆</label>
@@ -41,26 +41,26 @@
 
 
 
-        <h3>Public or Business</h3>
+        <h3><span>Public or Business</span></h3>
         <input type="radio" name="Type of Bathroom" value="Business" ng-model="review.type" id="business">
-        <label for="business"> Business</label></br>
+        <label for="business"><span>Business</span></label></br>
         <input type="radio" name="Type of Bathroom" value="Public" ng-model="review.type" id="public">
-        <label for="public"> Public </label></br>
+        <label for="public"><span>Public</span></label></br>
 
 
-        <h3>Type of Bathroom</h3>
+        <h3><span>Type of Bathroom</span></h3>
         <input type="checkbox" name="Type of Bathroom" ng-value="separate" ng-model="review.separate" id="genderseparate">
-        <label for="genderseparate">Gender Separate</label><br>
+        <span><label for="genderseparate">Gender Separate</label></span><br>
         <input type="checkbox" name="Type of Bathroom" ng-value="neutral" ng-model="review.neutral" id="genderneutral">
-        <label for="genderneutral">Transgender Friendly</label><br>
+        <span><label for="genderneutral">Transgender Friendly</label></span><br>
         <input type="checkbox" name="Type of Bathroom" ng-value="handicap" ng-model="review.handicap" id="handicapCheckbox">
-        <label for="handicapCheckbox">Handicap</label><br>
+        <span><label for="handicapCheckbox">Handicap</label></span><br>
         <input type="checkbox" name="Type of Bathroom" ng-value="family" ng-model="review.family" id="familyCheckbox">
-        <label for="familyCheckbox">Family Friendly</label><br>
+        <span><label for="familyCheckbox">Family Friendly</label></span><br>
         <input type="checkbox" name="Type of Bathroom" ng-value="single-stall" ng-model="review.single" id="singleCheckbox">
-        <label for="singleCheckbox">Single Stall</label><br>
+        <span><label for="singleCheckbox">Single Stall</label></span><br>
 
-        <h3>Comments</h3>
+        <h3><span>Comments</span></h3>
         <input type="text" size="80" height="80px" name="review text" placeholder="Additional Information" ng-model="review.comment"><br>
 
 
